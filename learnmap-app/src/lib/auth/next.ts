@@ -11,13 +11,20 @@ export function sanitizeNext(raw: string | null | undefined): string {
   if (/\s/.test(next)) return fallback;
 
   // Conservative allowlist.
+  // Keep this small. Only allow internal pages we explicitly support.
   if (
+    next === "/" ||
+    next === "/demo" ||
+    next === "/help" ||
     next === "/learn" ||
     next.startsWith("/learn/") ||
     next === "/roadmaps" ||
     next.startsWith("/roadmap/") ||
     next.startsWith("/guide/") ||
-    next.startsWith("/quiz/")
+    next.startsWith("/quiz/") ||
+    next === "/progress" ||
+    next === "/profile" ||
+    next === "/settings"
   ) {
     return next;
   }

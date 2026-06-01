@@ -1,13 +1,7 @@
-import AppShell from "@/lib/ui/AppShell";
-import ComingSoon from "@/lib/ui/ComingSoon";
+import { redirect } from "next/navigation";
 
 export default function HomePage() {
-  return (
-    <AppShell title="Home" subtitle="Dashboard">
-      <ComingSoon
-        title="Dashboard"
-        description="This dashboard is coming next. For now, use Roadmaps to continue learning."
-      />
-    </AppShell>
-  );
+  // This route used to be a placeholder dashboard.
+  // For a cleaner first impression, `/` is the public landing page.
+  redirect("/");
 }

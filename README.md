@@ -1,8 +1,50 @@
 # LearnMap
 
-Mobile-first, AI-powered learning roadmap app for university students (and lifelong learners). LearnMap turns a topic into a structured learning path with guides, quizzes, and progress tracking.
+Mobile-first, AI-powered learning roadmap app for university students (and lifelong learners).
 
-> Repo note: the actual Next.js app lives in **`learnmap-app/`**.
+> The production Next.js app lives in **`learnmap-app/`**.
+
+**Live demo:** _add your Vercel URL here_ (e.g. `https://learnmap-yourname.vercel.app`)
+
+---
+
+## Recruiter quickstart (10–15 minutes)
+
+This repo contains a real full-stack MVP. The **full generation flow** requires:
+- a **Supabase** project (Auth + Postgres)
+- an **AI endpoint** that supports OpenAI-compatible `/chat/completions` (or a compatible proxy)
+
+If you only want to understand the product quickly:
+- open **`/demo`** after running the app (no auth needed)
+
+### 1) Run locally
+
+```bash
+git clone <your-repo-url>
+cd LearnMap/learnmap-app
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
+Open http://localhost:3000
+
+### 2) Configure Supabase (required for real generation)
+
+1. Create a Supabase project.
+2. Supabase Dashboard → **SQL Editor** → run: `learnmap-app/supabase/schema.sql`
+3. Supabase Dashboard → **Project Settings → API**:
+   - copy **Project URL** → `NEXT_PUBLIC_SUPABASE_URL`
+   - copy **anon public** key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+4. Supabase Dashboard → **Authentication → URL Configuration**:
+   - add redirect URL: `http://localhost:3000/auth/callback`
+
+### 3) Configure the AI endpoint
+
+Set these in `.env.local`:
+- `AI_ENDPOINT_URL`
+- `AI_API_KEY` (if your provider requires it)
+- `AI_MODEL_FAST`, `AI_MODEL_SMART`
 
 ---
 
@@ -10,142 +52,88 @@ Mobile-first, AI-powered learning roadmap app for university students (and lifel
 
 LearnMap is built around one core loop:
 
-1. **Topic input** → user enters what they want to learn
-2. **AI clarifying questions** → the app asks a few questions to tailor the roadmap
-3. **User profile** → learning style, goal, etc.
-4. **AI roadmap generation** → chapters + guide titles are generated and stored
-5. **Visual roadmap** → shows what’s locked vs available
-6. **Guide reading** (AI-generated on demand) → read and mark complete
-7. **Quiz** → pass threshold is **4/5** to unlock progress
-
-This repo is an MVP-first implementation with a focus on:
-- clean UX on **mobile (375px)**
-- simple, readable code (avoid clever abstractions)
-- server-side safety for AI JSON (parse + validate before DB)
+1. Topic input
+2. AI clarifying questions
+3. Learner profile
+4. AI roadmap generation (chapters + guide titles)
+5. Visual roadmap
+6. Guide reading (generated on demand)
+7. Quiz (pass threshold is **4/5**) to unlock progress
 
 ---
 
-## Current state (what already works)
+## Code tour (the “agentic” bits)
 
-Implemented end-to-end:
-- Auth via **Supabase OAuth** (Google + magic link)
-- Gated personal pages with server-side `requireUser()` redirects
-- Topic → AI clarifying questions (`/api/ai/topic-questions`)
-- Roadmap generation + persistence (`/api/ai/roadmap`)
-- Visual roadmap page (`/roadmap/[id]`)
-- Guide generation on demand (`/api/ai/guide`) + guide reading UI (`/guide/[id]`)
-- Quiz generation on demand (`/api/ai/quiz`) + real scoring UI (`/quiz/[chapterId]`)
-- Progress endpoints:
-  - complete guide → award XP + unlock next guide
-  - complete quiz → unlock next chapter only if score **≥ 4/5**
+If you only read a few files, start here:
 
-Known gaps (planned next):
-- Landing page (`/`)
-- Profile page with XP/level/streak UI
-- Hearts system
-- Better loading UX for roadmap generation
-- Markdown rendering improvements in guides
+- AI transport wrapper (provider-agnostic):
+  - `learnmap-app/src/lib/ai/client.ts`
+- JSON parse + repair retry:
+  - `learnmap-app/src/lib/ai/parse.ts`
+- Zod schemas (AI contracts):
+  - `learnmap-app/src/lib/ai/schemas.ts`
+- Prompt library:
+  - `learnmap-app/src/lib/ai/prompts.ts`
+- Roadmap generation route (best end-to-end example):
+  - `learnmap-app/src/app/api/ai/roadmap/route.ts`
+
+---
+
+## AI review prompt (copy/paste)
+
+If you’re reviewing this repo with an AI coding assistant (Claude Code / Cursor / Copilot), use:
+
+> Explain the end-to-end flow from `/learn` → `/api/ai/roadmap` → Supabase inserts → `/roadmap/[id]`.
+> Point to the exact files. Highlight validation/guardrails (JSON parse, Zod validation, repair retry) and auth/ownership checks.
 
 ---
 
 ## Tech stack
 
-**Frontend**
 - Next.js 14 (App Router) + TypeScript
-- Tailwind CSS + shadcn/ui
-
-**Backend**
-- Next.js Route Handlers (`/app/api/*`)
-
-**Database + Auth**
+- Tailwind CSS (mobile-first UI)
 - Supabase (Postgres + RLS + OAuth)
-
-**AI**
-- Provider-agnostic HTTP wrapper (OpenAI-compatible *or* Anthropic-style responses)
-- All AI calls go through: `learnmap-app/src/lib/ai/client.ts`
-
-**Deployment**
-- Vercel (Next.js)
-- Supabase (DB/Auth)
+- Next.js Route Handlers (`/app/api/*`)
 
 ---
 
-## Repository layout
+## Deploy to Vercel (fast path)
+
+1. Import the GitHub repo into Vercel.
+2. Set **Root Directory** to: `learnmap-app`
+3. Add environment variables from `learnmap-app/.env.example`
+4. Deploy
+5. In Supabase Auth settings, add redirect URL:
+   - `https://<your-vercel-domain>/auth/callback`
+
+---
+
+## AI-assisted development (brief)
+
+I use AI tools to speed up implementation and iteration (UI scaffolding, debugging, refactors), but I treat the final system as my responsibility:
+- define the constraints (schemas, validation rules, product logic)
+- review outputs critically
+- validate changes with builds and real usage
+
+---
+
+## Current state (what works)
+
+Implemented end-to-end:
+- Auth via Supabase (OAuth + email/password)
+- Topic → AI clarifying questions (`/api/ai/topic-questions`)
+- Roadmap generation + persistence (`/api/ai/roadmap`)
+- Guide generation on demand (`/api/ai/guide`)
+- Quiz flow + pass rule enforcement (`/quiz/[chapterId]`)
+
+---
+
+## Repo layout
 
 ```text
 LearnMap/
-  learnmap-app/          # Next.js app (this is what you run/deploy)
+  learnmap-app/          # Next.js app (run/deploy this)
   design/                # Static design references
   ProjectDescription.txt # Product brief
   README.md              # You are here
 ```
-
----
-
-## Run locally
-
-### 1) Install prerequisites
-- Node.js **LTS**: https://nodejs.org
-
-### 2) Install dependencies
-
-```bash
-cd learnmap-app
-npm install
-```
-
-### 3) Configure environment variables
-
-```bash
-cd learnmap-app
-cp .env.example .env.local
-```
-
-Fill in `.env.local` with your Supabase + AI values.
-
-Important notes:
-- Never commit `.env.local` (this repo ignores all `**/.env*`).
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` must be the **anon/public** key (not `service_role`, not `sb_secret_*`).
-
-### 4) Create the database schema
-In Supabase Dashboard → **SQL Editor** → run:
-- `learnmap-app/supabase/schema.sql`
-
-### 5) Start the dev server
-
-```bash
-cd learnmap-app
-npm run dev
-```
-
-Open http://localhost:3000
-
----
-
-## AI safety + data integrity
-
-All AI outputs that are stored in the database are handled defensively:
-- parsed via `JSON.parse()` with try/catch
-- validated with **Zod** schemas
-- if parsing fails: one repair retry, otherwise a human-readable UI error
-
-AI wrapper handles both response formats:
-- OpenAI-compatible: `data.choices[0].message.content`
-- Anthropic-style: `data.content[0].text`
-
----
-
-## Deploy (Vercel)
-
-High level:
-1. Create a Supabase project, apply schema, configure OAuth redirect URLs.
-2. Create a Vercel project from this repo.
-3. Add the environment variables in Vercel project settings.
-
-(Full step-by-step instructions are in `learnmap-app/README.md`.)
-
----
-
-## License
-
-Private / job-application demo. Add a license if you plan to open-source this.

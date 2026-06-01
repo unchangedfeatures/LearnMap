@@ -37,22 +37,72 @@ cp .env.example .env.local
 
 Fill in `.env.local`.
 
+**Required env vars**
+
+| Variable | Required | Purpose |
+|---|---:|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | ✅ | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | ✅ | Supabase anon/public key (not service role, not `sb_secret_*`) |
+| `AI_ENDPOINT_URL` | ✅ | Base URL (or full URL) for an OpenAI-compatible `chat/completions` endpoint |
+| `AI_API_KEY` | ◻️ | Optional, depends on your provider |
+| `AI_MODEL_FAST` | ✅ | Used for quick tasks (questions, small generations) |
+| `AI_MODEL_SMART` | ✅ | Used for roadmap/guide/quiz generation |
+
+**Example `.env.local`**
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+
+AI_ENDPOINT_URL=https://YOUR_AI_PROVIDER_BASE_URL
+AI_API_KEY=YOUR_AI_KEY
+AI_MODEL_FAST=your-fast-model
+AI_MODEL_SMART=your-smart-model
+```
+
 Notes:
 - Never commit env files. The repo ignores `**/.env*`.
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` must be the **anon/public** key (not `service_role`, not `sb_secret_*`).
-- `SUPABASE_SERVICE_ROLE_KEY` is server-only (should never be used from client components).
+- `AI_ENDPOINT_URL` may be either:
+  - `https://provider.example.com` (the app will append `/chat/completions`), or
+  - `https://provider.example.com/chat/completions`
 
-### 4) Database schema
-Supabase Dashboard → **SQL Editor** → run:
+### 4) Supabase setup
+
+1) Supabase Dashboard → **SQL Editor** → run:
 - `supabase/schema.sql`
 
+2) Supabase Dashboard → **Authentication → URL Configuration**
+Add redirect URLs:
+- `http://localhost:3000/auth/callback`
+- `https://<your-domain>/auth/callback`
+
+3) Enable providers you want in Supabase Auth (Google/Discord/email).
+
 ### 5) Start dev server
+
+After env + schema are configured:
 
 ```bash
 npm run dev
 ```
 
 Open http://localhost:3000
+
+---
+
+## Deploy to Vercel
+
+1) Import the GitHub repo into Vercel
+2) Set **Root Directory** to: `learnmap-app`
+3) Add env vars from `.env.example`
+4) Deploy
+5) Add your deployed callback URL in Supabase:
+- `https://<your-vercel-domain>/auth/callback`
+
+### Smoke test
+- Visit `/` and `/demo`
+- Sign in at `/auth`
+- Create a roadmap from `/learn`
 
 ---
 

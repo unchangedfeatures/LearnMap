@@ -85,7 +85,7 @@ export default function AppShell({ title, subtitle, sidebarContent, children }: 
 
             <SidebarSection title="Navigation">
               <nav className="flex flex-col gap-2">
-                <NavItem href="/home" label="Home" icon="home" active={title === "Home"} />
+                <NavItem href="/" label="Home" icon="home" active={title === "Home"} />
                 <NavItem
                   href="/roadmaps"
                   label="Roadmaps"
@@ -111,7 +111,7 @@ export default function AppShell({ title, subtitle, sidebarContent, children }: 
           </div>
         ) : (
           <nav className="flex-1 flex flex-col gap-2">
-            <NavItem href="/home" label="Home" icon="home" active={title === "Home"} />
+            <NavItem href="/" label="Home" icon="home" active={title === "Home"} />
             <NavItem
               href="/roadmaps"
               label="Roadmaps"
