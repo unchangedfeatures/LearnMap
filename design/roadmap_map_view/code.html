@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Roadmap - LearnMap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Literata:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#eef0f9",
+                      "on-secondary": "#ffffff",
+                      "surface-bright": "#f9f9ff",
+                      "tertiary": "#006529",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#f1f3fc",
+                      "surface-container-highest": "#e0e2eb",
+                      "surface-container": "#ebeef6",
+                      "on-primary-fixed-variant": "#0031c4",
+                      "secondary-fixed": "#e7deff",
+                      "secondary": "#6339db",
+                      "surface-variant": "#e0e2eb",
+                      "outline": "#747686",
+                      "tertiary-container": "#0d8038",
+                      "surface-container-high": "#e6e8f1",
+                      "secondary-container": "#7d56f5",
+                      "secondary-fixed-dim": "#ccbdff",
+                      "error-container": "#ffdad6",
+                      "surface": "#f9f9ff",
+                      "on-surface-variant": "#444655",
+                      "inverse-surface": "#2d3037",
+                      "on-primary-fixed": "#001159",
+                      "primary": "#2346d5",
+                      "surface-dim": "#d7dae2",
+                      "on-secondary-fixed": "#1f005f",
+                      "on-error-container": "#93000a",
+                      "background": "#f9f9ff",
+                      "on-primary-container": "#f4f2ff",
+                      "on-surface": "#181c22",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed-variant": "#4d17c5",
+                      "outline-variant": "#c4c5d7",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#bac3ff",
+                      "on-secondary-container": "#fffbff",
+                      "on-tertiary-fixed": "#002109",
+                      "on-tertiary-fixed-variant": "#005320",
+                      "surface-tint": "#2e4edc",
+                      "on-tertiary-container": "#d1ffd1",
+                      "tertiary-fixed-dim": "#77dc87",
+                      "inverse-primary": "#bac3ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-background": "#181c22",
+                      "tertiary-fixed": "#92f9a1",
+                      "primary-container": "#4361ee",
+                      "primary-fixed": "#dee1ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "16px",
+                      "safe-area-bottom": "34px",
+                      "base": "4px",
+                      "gutter": "16px",
+                      "stack-sm": "8px",
+                      "margin-mobile": "20px",
+                      "stack-lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "guide-text": ["Literata"],
+                      "display-lg": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-caps": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "guide-text": ["17px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                      "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Map specific animations */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            80%, 100% { transform: scale(1.5); opacity: 0; }
+        }
+        .animate-pulse-ring { animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+        
+        @keyframes dash-flow {
+            to { stroke-dashoffset: -20; }
+        }
+        .flow-line { background-image: linear-gradient(to bottom, transparent 50%, rgba(116, 118, 134, 0.3) 50%); background-size: 100% 8px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen relative flex justify-center">
+<!-- Mobile Constraint Wrapper -->
+<main class="w-full max-w-[390px] relative bg-background shadow-2xl min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar (From JSON) -->
+<header class="bg-surface/90 dark:bg-surface-container/90 backdrop-blur-xl docked full-width top-0 h-[52px] fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile flat no shadows max-w-[390px] mx-auto right-0">
+<div class="flex items-center gap-3">
+<button class="hover:opacity-80 transition-opacity flex items-center justify-center w-10 h-10 -ml-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed tracking-tight">LearnMap</h1>
+</div>
+<button class="hover:opacity-80 transition-opacity flex items-center justify-center w-10 h-10 -mr-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="more_vert">more_vert</span>
+</button>
+</header>
+<!-- AI Personalization Strip -->
+<div class="mt-[52px] bg-secondary-container text-on-secondary-container px-margin-mobile py-2.5 flex items-center justify-center gap-2 relative z-40 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed" data-icon="auto_awesome" data-weight="fill">auto_awesome</span>
+<span class="text-label-caps font-label-caps tracking-widest text-on-secondary-container">✦ Personalized for you</span>
+</div>
+<!-- Scrollable Map Canvas -->
+<div class="flex-1 overflow-y-auto hide-scrollbar pb-[120px] pt-stack-md relative">
+<!-- Global Map Track -->
+<!-- Base track (inactive/future) -->
+<div class="absolute left-[36px] top-[40px] bottom-0 w-[2px] flow-line z-0"></div>
+<!-- Progress track (completed) -->
+<div class="absolute left-[36px] top-[40px] h-[220px] w-[2px] bg-tertiary z-0 shadow-[0_0_8px_rgba(0,101,41,0.5)]"></div>
+<!-- Current track transition (completed to current) -->
+<div class="absolute left-[36px] top-[260px] h-[60px] w-[2px] bg-gradient-to-b from-tertiary to-primary z-0"></div>
+<!-- Chapter 1 (Completed) -->
+<div class="relative flex px-margin-mobile z-10 mb-stack-lg group">
+<div class="w-[32px] flex-shrink-0 flex justify-center bg-background py-2">
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-lg shadow-tertiary/30 ring-4 ring-background transition-transform duration-300 group-hover:scale-110">
+<span class="material-symbols-outlined text-[18px]" data-icon="check" data-weight="fill">check</span>
+</div>
+</div>
+<div class="flex-grow pl-stack-md">
+<div class="bg-surface-container-lowest rounded-[16px] p-4 shadow-[0_4px_20px_0_rgba(0,0,0,0.06)] border border-surface-container-low transition-all duration-300 hover:shadow-[0_8px_25px_0_rgba(0,0,0,0.1)] flex gap-4 items-center">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<div class="w-full h-full bg-cover bg-center" data-alt="A pristine, minimalist architectural 3D rendering of white geometric steps ascending upwards. Soft, high-key studio lighting casts gentle shadows, creating a pristine light-mode aesthetic. A subtle hint of success-green light reflects softly off the lowest step, symbolizing a completed foundation. The mood is calm, structured, and modern corporate." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCy0P2KNGjtWMRRdyClCVbjGe__5QTbMTXHWDLspdU0D2sF0vtGSRAmn3HVFFc2WGDmA-ig0y76UauWtpxOcxlApFwXbJRsWmfpUqdxOYVvT2JCAzqRVJXO_qz_Vsfv6dOpg6rFZWuGkjkagk-dRxJeAvcRASOsn_rC18f0igENEvAa7p3nrTSzRLWGoZPb4oeVQ6ZUabqktq3goT9gXBC6mAFKGBth81hFcecKZZvCK-mYsZr1FvmS3hf_on-VQC_B8-aEFqGUjB73');"></div>
+</div>
+<div>
+<span class="text-label-caps font-label-caps text-tertiary mb-1 block">Chapter 1 • Complete</span>
+<h2 class="text-body-lg font-headline-sm text-on-surface">Foundational Data Structures</h2>
+</div>
+</div>
+</div>
+</div>
+<!-- Chapter 2 (Current) -->
+<div class="relative flex px-margin-mobile z-10 mb-4">
+<div class="w-[32px] flex-shrink-0 flex justify-center bg-background py-1">
+<div class="relative w-10 h-10 -ml-1">
+<div class="absolute inset-0 bg-primary opacity-30 rounded-full animate-pulse-ring"></div>
+<div class="relative w-full h-full rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg shadow-primary/40 ring-4 ring-background z-10">
+<span class="material-symbols-outlined text-[24px]" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex-grow pl-stack-md pt-2">
+<span class="text-label-caps font-label-caps text-primary mb-1 block">Chapter 2 • Current Focus</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface leading-tight mb-2">Predictive Modeling &amp; Algorithms</h2>
+<p class="font-guide-text text-guide-text text-on-surface-variant">Master the core engines that drive intelligent systems.</p>
+</div>
+</div>
+<!-- Guides for Chapter 2 (Indented Sub-nodes) -->
+<div class="relative flex flex-col gap-5 mb-10 z-10 pt-2">
+<!-- Guide 1 (Completed) -->
+<div class="flex relative items-center group">
+<!-- Horizontal Connector (Main Spine X=36, Guide Icon left edge X=60) -->
+<div class="absolute left-[36px] w-[24px] h-[2px] bg-tertiary z-0 opacity-70"></div>
+<!-- Guide Icon -->
+<div class="ml-[60px] w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center z-10 ring-4 ring-background shadow-sm transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[14px]" data-icon="check" data-weight="fill">check</span>
+</div>
+<!-- Guide Content -->
+<div class="flex-grow pl-3 pr-margin-mobile">
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-surface-container-low shadow-[0_2px_10px_0_rgba(0,0,0,0.03)] flex items-center justify-between opacity-80 hover:opacity-100 transition-opacity">
+<span class="font-body-sm text-on-surface font-semibold">1. Linear Regression Basics</span>
+</div>
+</div>
+</div>
+<!-- Guide 2 (Completed) -->
+<div class="flex relative items-center group">
+<div class="absolute left-[36px] w-[24px] h-[2px] bg-tertiary z-0 opacity-70"></div>
+<div class="ml-[60px] w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center z-10 ring-4 ring-background shadow-sm transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[14px]" data-icon="check" data-weight="fill">check</span>
+</div>
+<div class="flex-grow pl-3 pr-margin-mobile">
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-surface-container-low shadow-[0_2px_10px_0_rgba(0,0,0,0.03)] flex items-center justify-between opacity-80 hover:opacity-100 transition-opacity">
+<span class="font-body-sm text-on-surface font-semibold">2. Decision Trees</span>
+</div>
+</div>
+</div>
+<!-- Guide 3 (Current) -->
+<div class="flex relative items-center">
+<!-- Solid blue connector from spine -->
+<div class="absolute left-[36px] w-[24px] h-[2px] bg-primary z-0 shadow-[0_0_5px_rgba(35,70,213,0.5)]"></div>
+<!-- Current Pulse Icon -->
+<div class="ml-[56px] w-8 h-8 rounded-full bg-primary-container text-on-primary-container border-[2.5px] border-primary flex items-center justify-center z-10 ring-4 ring-background shadow-md">
+<div class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
+</div>
+<!-- Active Card -->
+<div class="flex-grow pl-3 pr-margin-mobile">
+<div class="p-4 bg-surface-bright rounded-[16px] border border-primary shadow-[0_8px_24px_rgba(35,70,213,0.12)] flex flex-col relative overflow-hidden cursor-pointer hover:shadow-[0_12px_32px_rgba(35,70,213,0.18)] transition-shadow">
+<!-- Subtle highlight gradient -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary-fixed/30 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<span class="font-body-sm text-primary font-bold">3. Neural Network Architectures</span>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="mt-3 w-full bg-primary-fixed-dim/30 rounded-full h-1.5 relative z-10">
+<div class="bg-primary h-1.5 rounded-full" style="width: 35%"></div>
+</div>
+<span class="text-label-caps font-label-caps text-primary/70 mt-2 relative z-10">35% IN PROGRESS</span>
+</div>
+</div>
+</div>
+<!-- Guide 4 (Locked) -->
+<div class="flex relative items-center opacity-60">
+<div class="absolute left-[36px] w-[24px] h-[2px] border-b-2 border-dashed border-outline-variant z-0"></div>
+<div class="ml-[60px] w-6 h-6 rounded-full bg-surface-container text-outline flex items-center justify-center z-10 ring-4 ring-background">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock" data-weight="fill">lock</span>
+</div>
+<div class="flex-grow pl-3 pr-margin-mobile">
+<div class="p-3 bg-transparent rounded-xl border border-dashed border-outline-variant flex items-center justify-between">
+<span class="font-body-sm text-on-surface-variant font-medium">4. Optimization Techniques</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chapter 3 (Locked) -->
+<div class="relative flex px-margin-mobile z-10 opacity-50 mt-4">
+<div class="w-[32px] flex-shrink-0 flex justify-center bg-background py-2">
+<div class="w-8 h-8 rounded-full bg-surface-container text-outline flex items-center justify-center ring-4 ring-background">
+<span class="material-symbols-outlined text-[16px]" data-icon="lock" data-weight="fill">lock</span>
+</div>
+</div>
+<div class="flex-grow pl-stack-md pt-1">
+<h2 class="text-headline-sm font-headline-sm text-on-surface-variant leading-tight mb-1">Advanced Deep Learning</h2>
+<p class="font-guide-text text-guide-text text-outline-variant line-clamp-2">Complete Chapter 2 to unlock generative models and transformers.</p>
+</div>
+</div>
+<!-- Map End Cap -->
+<div class="mt-8 flex justify-center">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+<!-- BottomNavBar (From JSON with semantic logic applied) -->
+<nav class="bg-surface/90 dark:bg-surface-container/90 backdrop-blur-xl docked full-width bottom-0 rounded-t-xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.1)] dark:shadow-none fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-safe-area-bottom pt-2 max-w-[390px] mx-auto right-0 border-t border-surface-container-low md:hidden">
+<!-- Inactive: Home -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-xl transition-colors">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-caps font-label-caps mt-1">Home</span>
+</button>
+<!-- Active: Roadmaps (Intent Match) -->
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-secondary-container text-on-primary-container dark:text-on-secondary-container rounded-xl px-4 py-1 scale-95 duration-100 shadow-sm">
+<span class="material-symbols-outlined" data-icon="map" data-weight="fill">map</span>
+<span class="text-label-caps font-label-caps mt-1 font-bold">Roadmaps</span>
+</button>
+<!-- Inactive: Progress -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-xl transition-colors">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-label-caps font-label-caps mt-1">Progress</span>
+</button>
+<!-- Inactive: Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-xl transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-caps font-label-caps mt-1">Profile</span>
+</button>
+</nav>
+</main>
+</body></html>

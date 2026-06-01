@@ -1,0 +1,261 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Literata:ital,wght@0,400;0,700;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#f4f2ff",
+                    "secondary-container": "#7d56f5",
+                    "on-secondary-fixed": "#1f005f",
+                    "tertiary": "#006529",
+                    "surface-variant": "#e0e2eb",
+                    "surface-tint": "#2e4edc",
+                    "inverse-primary": "#bac3ff",
+                    "surface-container": "#ebeef6",
+                    "primary": "#2346d5",
+                    "surface-dim": "#d7dae2",
+                    "secondary-fixed-dim": "#ccbdff",
+                    "background": "#f9f9ff",
+                    "surface": "#f9f9ff",
+                    "inverse-on-surface": "#eef0f9",
+                    "tertiary-fixed": "#92f9a1",
+                    "outline-variant": "#c4c5d7",
+                    "secondary": "#6339db",
+                    "outline": "#747686",
+                    "on-secondary-fixed-variant": "#4d17c5",
+                    "on-tertiary-container": "#d1ffd1",
+                    "surface-container-high": "#e6e8f1",
+                    "on-surface-variant": "#444655",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#dee1ff",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#181c22",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f1f3fc",
+                    "on-primary-fixed-variant": "#0031c4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#181c22",
+                    "tertiary-container": "#0d8038",
+                    "on-tertiary-fixed": "#002109",
+                    "inverse-surface": "#2d3037",
+                    "primary-container": "#4361ee",
+                    "secondary-fixed": "#e7deff",
+                    "on-tertiary-fixed-variant": "#005320",
+                    "on-primary-fixed": "#001159",
+                    "on-secondary-container": "#fffbff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#77dc87",
+                    "primary-fixed-dim": "#bac3ff",
+                    "surface-container-highest": "#e0e2eb",
+                    "surface-bright": "#f9f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "base": "4px",
+                    "safe-area-bottom": "34px",
+                    "margin-mobile": "20px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "guide-text": ["Literata"],
+                    "label-caps": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "guide-text": ["17px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #F4F6FF;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="font-body-lg text-on-background">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile bg-surface/90 dark:bg-surface-container/90 backdrop-blur-xl h-[52px]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity" data-icon="arrow_back">arrow_back</span>
+<span class="text-headline-sm font-headline-sm font-bold text-primary">LearnMap</span>
+</div>
+<span class="material-symbols-outlined text-on-surface cursor-pointer" data-icon="more_vert">more_vert</span>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[76px] pb-[120px] px-margin-mobile max-w-md mx-auto">
+<!-- Header Section -->
+<section class="mb-stack-lg">
+<h1 class="text-display-lg font-display-lg text-on-surface mb-2">Your Learning Plan</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Based on your answers, here's what I'll build for you</p>
+</section>
+<!-- Profile Summary Card -->
+<section class="bg-primary-fixed/30 p-stack-md rounded-xl mb-stack-lg border border-primary-fixed/50">
+<h2 class="text-label-caps font-label-caps text-on-primary-fixed-variant mb-stack-md">YOUR PROFILE</h2>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-body-sm font-body-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="architecture">architecture</span> 📐 Mathematics
+                </span>
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-body-sm font-body-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="target">target</span> 🎯 Exam prep
+                </span>
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-body-sm font-body-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="calendar_month">calendar_month</span> 📅 3 months
+                </span>
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-body-sm font-body-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="bar_chart">bar_chart</span> 📊 Statistics &amp; Algebra
+                </span>
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-body-sm font-body-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="school">school</span> 🎓 University student
+                </span>
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-body-sm font-body-sm text-primary flex items-center gap-1 border border-primary/20">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit_note">edit_note</span> 📝 Struggling with integrals
+                </span>
+</div>
+</section>
+<!-- Estimated Time Card -->
+<section class="grid grid-cols-3 gap-stack-sm mb-stack-lg">
+<div class="bg-surface-container-lowest p-stack-sm rounded-xl shadow-sm text-center border border-surface-variant">
+<span class="block text-headline-sm font-headline-sm text-primary">8</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant">WEEKS</span>
+</div>
+<div class="bg-surface-container-lowest p-stack-sm rounded-xl shadow-sm text-center border border-surface-variant">
+<span class="block text-headline-sm font-headline-sm text-primary">27</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant">GUIDES</span>
+</div>
+<div class="bg-surface-container-lowest p-stack-sm rounded-xl shadow-sm text-center border border-surface-variant">
+<span class="block text-headline-sm font-headline-sm text-primary">5</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant">QUIZZES</span>
+</div>
+</section>
+<!-- Roadmap Plan Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] overflow-hidden border border-surface-variant mb-stack-lg">
+<div class="h-2 bg-gradient-to-r from-secondary to-primary"></div>
+<div class="p-stack-md">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-label-caps font-label-caps text-secondary uppercase tracking-widest">What I'll build for you</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-stack-lg">Statistics &amp; Algebra for University — Exam Ready</h3>
+<div class="space-y-stack-md relative">
+<!-- Progress Line -->
+<div class="absolute left-[15px] top-4 bottom-4 w-[2px] bg-surface-variant"></div>
+<!-- Chapter 1 -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 text-label-caps font-label-caps z-10">1</div>
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">Foundations of Algebra</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Linear systems and matrix theory basics.</p>
+</div>
+</div>
+<!-- Chapter 2 -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 text-label-caps font-label-caps z-10">2</div>
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">Probability Distributions</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Continuous vs Discrete random variables.</p>
+</div>
+</div>
+<!-- Chapter 3 -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 text-label-caps font-label-caps z-10">3</div>
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">Descriptive Statistics</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Data visualization and variance analysis.</p>
+</div>
+</div>
+<!-- Chapter 4 (Prioritized) -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 text-label-caps font-label-caps z-10 ring-4 ring-secondary-fixed">4</div>
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">Integration in Stats</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Advanced integral applications for PDF curves.</p>
+</div>
+</div>
+<!-- Chapter 5 -->
+<div class="flex items-start gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 text-label-caps font-label-caps z-10">5</div>
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">Hypothesis Testing</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Critical values and final exam simulation.</p>
+</div>
+</div>
+</div>
+<!-- Special Note (Warning-light) -->
+<div class="mt-stack-lg bg-error-container/20 p-stack-md rounded-lg border border-error-container/50">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-error" data-icon="lightbulb">lightbulb</span>
+<p class="text-body-sm font-body-sm text-on-error-container">💡 Chapter 4 is prioritized because you mentioned struggling with integrals</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Personalization Note (Success-light) -->
+<section class="bg-tertiary-fixed/20 p-stack-md rounded-xl border border-tertiary-fixed/40 flex gap-3 items-start">
+<span class="material-symbols-outlined text-tertiary" data-icon="check_circle">check_circle</span>
+<p class="text-body-sm font-body-sm text-on-tertiary-fixed-variant">✅ Every guide will be written specifically for you, focusing on the university-level depth you need for your upcoming exams.</p>
+</section>
+</main>
+<!-- Sticky Bottom Actions -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-xl px-margin-mobile pt-stack-md pb-safe-area-bottom flex flex-col gap-3 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)]">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold text-body-lg flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+            Build My Roadmap
+        </button>
+<button class="w-full text-primary py-2 font-semibold text-body-sm flex items-center justify-center gap-1 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_back">arrow_back</span>
+            Adjust my answers
+        </button>
+</div>
+<!-- Background Subtle Glow Effect -->
+<div class="fixed top-[-10%] right-[-10%] w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px] -z-10"></div>
+<div class="fixed bottom-[10%] left-[-10%] w-[250px] h-[250px] bg-secondary/5 rounded-full blur-[80px] -z-10"></div>
+<script>
+        // Simple micro-interaction for chapter hover
+        document.querySelectorAll('.space-y-stack-md > div').forEach(chapter => {
+            chapter.addEventListener('mouseenter', () => {
+                chapter.style.transform = 'translateX(4px)';
+                chapter.style.transition = 'transform 0.2s ease';
+            });
+            chapter.addEventListener('mouseleave', () => {
+                chapter.style.transform = 'translateX(0px)';
+            });
+        });
+    </script>
+</body></html>

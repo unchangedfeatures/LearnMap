@@ -1,0 +1,41 @@
+# Root ignore (covers learnmap-app and repo-level artifacts)
+
+# dependencies
+**/node_modules/
+
+# next.js
+**/.next/
+**/out/
+
+# coverage
+**/coverage/
+
+# env files
+**/.env*
+
+# Claude / AI assistant artifacts (exclude from GitHub)
+**/.claude/
+CLAUDE.md
+**/CLAUDE.md
+CLAUDE.md.session-log.patch.md
+CLAUDE.md.*
+AGENTS.md
+**/AGENTS.md
+# (Keeps the repo recruiter-friendly; AI instructions stay local.)
+
+# vercel
+**/.vercel/
+
+# misc
+.DS_Store
+*.pem
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# typescript build info
+**/*.tsbuildinfo
+**/next-env.d.ts

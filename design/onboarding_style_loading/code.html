@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Onboarding - Step 4</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Literata:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eef0f9",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary": "#006529",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f1f3fc",
+                        "surface-container-highest": "#e0e2eb",
+                        "surface-container": "#ebeef6",
+                        "on-primary-fixed-variant": "#0031c4",
+                        "secondary-fixed": "#e7deff",
+                        "secondary": "#6339db",
+                        "surface-variant": "#e0e2eb",
+                        "outline": "#747686",
+                        "tertiary-container": "#0d8038",
+                        "surface-container-high": "#e6e8f1",
+                        "secondary-container": "#7d56f5",
+                        "secondary-fixed-dim": "#ccbdff",
+                        "error-container": "#ffdad6",
+                        "surface": "#f9f9ff",
+                        "on-surface-variant": "#444655",
+                        "inverse-surface": "#2d3037",
+                        "on-primary-fixed": "#001159",
+                        "primary": "#2346d5",
+                        "surface-dim": "#d7dae2",
+                        "on-secondary-fixed": "#1f005f",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9ff",
+                        "on-primary-container": "#f4f2ff",
+                        "on-surface": "#181c22",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#4d17c5",
+                        "outline-variant": "#c4c5d7",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#bac3ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed": "#002109",
+                        "on-tertiary-fixed-variant": "#005320",
+                        "surface-tint": "#2e4edc",
+                        "on-tertiary-container": "#d1ffd1",
+                        "tertiary-fixed-dim": "#77dc87",
+                        "inverse-primary": "#bac3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#181c22",
+                        "tertiary-fixed": "#92f9a1",
+                        "primary-container": "#4361ee",
+                        "primary-fixed": "#dee1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "safe-area-bottom": "34px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "guide-text": ["Literata"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "guide-text": ["17px", { "lineHeight": "1.8", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Keyframes for Node Graph Animation */
+        @keyframes pulse-node {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 15px var(--tw-colors-secondary); }
+        }
+        @keyframes flow-line {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .node-animate {
+            animation: pulse-node 2s infinite ease-in-out;
+        }
+        
+        .line-animate {
+            background: linear-gradient(90deg, transparent, var(--tw-colors-secondary), transparent);
+            background-size: 200% 100%;
+            animation: flow-line 2s infinite linear;
+        }
+
+        /* Hide scrollbar for clean device look */
+        ::-webkit-scrollbar { display: none; }
+        * { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-highest flex items-center justify-center min-h-screen">
+<!-- Mobile Device Simulator Wrapper -->
+<div class="w-full max-w-[390px] h-[844px] max-h-screen bg-background relative overflow-hidden flex flex-col shadow-2xl md:rounded-[40px] md:border-[8px] border-inverse-surface">
+<!-- Top App Bar (Progress) -->
+<header class="flex items-center justify-between px-margin-mobile h-[52px] shrink-0 w-full z-10">
+<button aria-label="Back" class="w-10 h-10 flex items-center justify-start text-on-surface-variant active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="flex flex-col items-center justify-center gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">4 of 4</span>
+<div class="flex gap-1.5">
+<div class="h-1.5 w-6 rounded-full bg-primary transition-all duration-300"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary transition-all duration-300"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary transition-all duration-300"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary transition-all duration-300"></div>
+</div>
+</div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto px-margin-mobile pt-stack-md pb-[120px]">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-sm tracking-tight">
+                How do you learn best?
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+                Select your preferred style to tailor your AI roadmap.
+            </p>
+<!-- 2x2 Grid of Style Chips -->
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Card 1: Examples -->
+<button class="style-chip group relative bg-surface rounded-[16px] p-5 flex flex-col items-center justify-center gap-stack-sm text-center border-2 border-surface-container-high hover:border-primary-fixed-dim transition-all duration-200 shadow-sm hover:shadow-md" data-selected="false">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary group-[.is-selected]:bg-primary group-[.is-selected]:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">search</span>
+</div>
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface group-[.is-selected]:text-primary">Examples</span>
+<!-- Active Indicator -->
+<div class="absolute top-3 right-3 opacity-0 group-[.is-selected]:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<!-- Card 2: Logic -->
+<button class="style-chip group relative bg-surface rounded-[16px] p-5 flex flex-col items-center justify-center gap-stack-sm text-center border-2 border-surface-container-high hover:border-primary-fixed-dim transition-all duration-200 shadow-sm hover:shadow-md is-selected border-primary bg-primary/5" data-selected="true">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">architecture</span>
+</div>
+<span class="font-headline-sm text-[16px] font-semibold text-primary">Logic</span>
+<!-- Active Indicator -->
+<div class="absolute top-3 right-3 opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<!-- Card 3: Stories -->
+<button class="style-chip group relative bg-surface rounded-[16px] p-5 flex flex-col items-center justify-center gap-stack-sm text-center border-2 border-surface-container-high hover:border-primary-fixed-dim transition-all duration-200 shadow-sm hover:shadow-md" data-selected="false">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary group-[.is-selected]:bg-primary group-[.is-selected]:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">theater_comedy</span>
+</div>
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface group-[.is-selected]:text-primary">Stories</span>
+<!-- Active Indicator -->
+<div class="absolute top-3 right-3 opacity-0 group-[.is-selected]:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<!-- Card 4: Direct -->
+<button class="style-chip group relative bg-surface rounded-[16px] p-5 flex flex-col items-center justify-center gap-stack-sm text-center border-2 border-surface-container-high hover:border-primary-fixed-dim transition-all duration-200 shadow-sm hover:shadow-md" data-selected="false">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary group-[.is-selected]:bg-primary group-[.is-selected]:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">bolt</span>
+</div>
+<span class="font-headline-sm text-[16px] font-semibold text-on-surface group-[.is-selected]:text-primary">Direct</span>
+<!-- Active Indicator -->
+<div class="absolute top-3 right-3 opacity-0 group-[.is-selected]:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+</div>
+</main>
+<!-- Floating Action Area (Bottom) -->
+<div class="absolute bottom-0 left-0 w-full bg-surface/80 backdrop-blur-xl border-t border-surface-container-highest px-margin-mobile pt-4 pb-safe-area-bottom z-30">
+<button class="w-full bg-secondary text-on-secondary rounded-xl py-4 flex items-center justify-center gap-2 shadow-[0_8px_20px_-8px_rgba(99,57,219,0.5)] active:scale-[0.98] transition-all duration-200 group overflow-hidden relative" id="generateBtn">
+<!-- Shimmer effect -->
+<div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
+<span class="font-headline-sm text-[16px] font-bold tracking-wide flex items-center gap-2">
+                    ✦ Generate My Roadmap
+                </span>
+</button>
+</div>
+<!-- Loading Overlay State -->
+<div class="absolute inset-0 z-50 bg-background/95 backdrop-blur-xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" id="loadingOverlay">
+<!-- Node Graph Animation Container -->
+<div class="relative w-48 h-48 mb-stack-lg flex items-center justify-center">
+<!-- Center Node -->
+<div class="absolute w-12 h-12 bg-secondary rounded-full z-10 flex items-center justify-center node-animate shadow-lg">
+<span class="material-symbols-outlined text-on-secondary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<!-- Orbiting Nodes & Connections -->
+<div class="absolute w-full h-full animate-[spin_10s_linear_infinite]">
+<!-- Node 1 -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-primary-container rounded-full node-animate" style="animation-delay: 0.5s;"></div>
+<!-- Node 2 -->
+<div class="absolute bottom-4 right-4 w-5 h-5 bg-tertiary-container rounded-full node-animate" style="animation-delay: 1s;"></div>
+<!-- Node 3 -->
+<div class="absolute bottom-4 left-4 w-7 h-7 bg-primary rounded-full node-animate" style="animation-delay: 1.5s;"></div>
+</div>
+<!-- Abstract connecting lines -->
+<svg class="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 100 100">
+<circle class="animate-[spin_15s_linear_infinite_reverse]" cx="50" cy="50" fill="none" r="40" stroke="var(--tw-colors-outline-variant)" stroke-dasharray="4 4" stroke-width="1"></circle>
+<circle class="animate-[spin_8s_linear_infinite]" cx="50" cy="50" fill="none" r="25" stroke="var(--tw-colors-secondary-fixed-dim)" stroke-dasharray="2 4" stroke-width="1"></circle>
+</svg>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface animate-pulse">
+                Analyzing your profile...
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-center max-w-[250px]">
+                Crafting the perfect learning path based on your style.
+            </p>
+</div>
+</div>
+<style>
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+    </style>
+<script>
+        // Interactive Logic for Style Chips
+        const chips = document.querySelectorAll('.style-chip');
+        
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                const isSelected = chip.getAttribute('data-selected') === 'true';
+                
+                // Toggle state
+                if (isSelected) {
+                    chip.setAttribute('data-selected', 'false');
+                    chip.classList.remove('is-selected', 'border-primary', 'bg-primary/5');
+                    
+                    // Revert icon styles
+                    const iconContainer = chip.querySelector('div:first-child');
+                    iconContainer.classList.remove('bg-primary', 'text-on-primary');
+                    iconContainer.classList.add('bg-surface-container', 'text-primary');
+                } else {
+                    chip.setAttribute('data-selected', 'true');
+                    chip.classList.add('is-selected', 'border-primary', 'bg-primary/5');
+                    
+                    // Apply active icon styles
+                    const iconContainer = chip.querySelector('div:first-child');
+                    iconContainer.classList.remove('bg-surface-container', 'text-primary');
+                    iconContainer.classList.add('bg-primary', 'text-on-primary');
+                }
+            });
+        });
+
+        // Generate Button Loading State Trigger
+        const generateBtn = document.getElementById('generateBtn');
+        const loadingOverlay = document.getElementById('loadingOverlay');
+
+        generateBtn.addEventListener('click', () => {
+            // Show overlay
+            loadingOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            loadingOverlay.classList.add('opacity-100', 'pointer-events-auto');
+            
+            // Optional: Simulate loading completion and redirect (commented out for visual demo purposes)
+            /*
+            setTimeout(() => {
+                // Navigate to next screen
+                // window.location.href = '/dashboard';
+            }, 3000);
+            */
+        });
+    </script>
+</body></html>

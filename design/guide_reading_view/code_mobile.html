@@ -1,0 +1,230 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Guide Reading View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eef0f9",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary": "#006529",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f1f3fc",
+                        "surface-container-highest": "#e0e2eb",
+                        "surface-container": "#ebeef6",
+                        "on-primary-fixed-variant": "#0031c4",
+                        "secondary-fixed": "#e7deff",
+                        "secondary": "#6339db",
+                        "surface-variant": "#e0e2eb",
+                        "outline": "#747686",
+                        "tertiary-container": "#0d8038",
+                        "surface-container-high": "#e6e8f1",
+                        "secondary-container": "#7d56f5",
+                        "secondary-fixed-dim": "#ccbdff",
+                        "error-container": "#ffdad6",
+                        "surface": "#f9f9ff",
+                        "on-surface-variant": "#444655",
+                        "inverse-surface": "#2d3037",
+                        "on-primary-fixed": "#001159",
+                        "primary": "#2346d5",
+                        "surface-dim": "#d7dae2",
+                        "on-secondary-fixed": "#1f005f",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9ff",
+                        "on-primary-container": "#f4f2ff",
+                        "on-surface": "#181c22",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#4d17c5",
+                        "outline-variant": "#c4c5d7",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#bac3ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed": "#002109",
+                        "on-tertiary-fixed-variant": "#005320",
+                        "surface-tint": "#2e4edc",
+                        "on-tertiary-container": "#d1ffd1",
+                        "tertiary-fixed-dim": "#77dc87",
+                        "inverse-primary": "#bac3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#181c22",
+                        "tertiary-fixed": "#92f9a1",
+                        "primary-container": "#4361ee",
+                        "primary-fixed": "#dee1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "safe-area-bottom": "34px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "guide-text": ["Literata"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "guide-text": ["17px", { "lineHeight": "1.8", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .guide-content p {
+            margin-bottom: 1.5rem;
+        }
+        .progress-bar-container {
+            width: 100%;
+            height: 4px;
+            background-color: rgba(67, 97, 238, 0.1);
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #4361ee;
+            width: 65%;
+            transition: width 0.3s ease;
+        }
+        /* Hiding scrollbar for reading focus */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:w-[390px] md:mx-auto md:border-x md:border-surface-variant relative pb-safe-area-bottom">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full md:w-[390px] md:left-auto z-50 flex flex-col bg-surface/90 backdrop-blur-xl transition-transform duration-300 shadow-[0_4px_20px_0_rgba(0,0,0,0.05)]" id="top-nav">
+<div class="flex justify-between items-center px-margin-mobile h-[52px]">
+<button aria-label="Go back" class="text-on-surface hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="text-headline-sm font-headline-sm font-bold text-primary truncate max-w-[200px]">Normal Distribution</div>
+<button aria-label="More options" class="text-on-surface hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">more_vert</span>
+</button>
+</div>
+<!-- Reading Progress Bar -->
+<div class="progress-bar-container">
+<div class="progress-bar-fill"></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile pt-[80px] pb-[120px] guide-content">
+<!-- Personalized AI Note -->
+<div class="mb-stack-lg bg-secondary-container/10 border-t-2 border-secondary rounded-b-xl p-4 shadow-sm">
+<div class="flex items-start gap-3">
+<div class="mt-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mb-1">AI Mentor Note:</p>
+<p class="font-body-sm text-body-sm text-on-surface">Since you struggled with standard deviation in the last module, pay special attention to the spread of the curve here. It directly connects to what we reviewed yesterday.</p>
+</div>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-md">Understanding the Bell Curve</h1>
+<div class="font-guide-text text-guide-text text-on-surface leading-relaxed">
+<p>The normal distribution, often called the bell curve, is one of the most important concepts in statistics. It describes how traits or variables are distributed within a population. In a perfectly normal distribution, the mean, median, and mode are all equal and located at the center of the distribution.</p>
+<p>Most of the data points fall close to the mean. As you move further away from the mean in either direction, the frequency of data points decreases, creating the characteristic bell shape.</p>
+</div>
+<!-- Visual Placeholder (Distribution Curve) -->
+<div class="my-stack-lg rounded-xl overflow-hidden shadow-sm border border-surface-variant bg-white relative aspect-[4/3] flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-fixed-dim/20 to-secondary-fixed-dim/20"></div>
+<div class="relative w-[80%] h-[60%] border-b border-l border-outline/50 flex items-end justify-center pb-4">
+<!-- Abstract Bell Curve Representation using SVG -->
+<svg class="text-primary overflow-visible" height="100%" preserveAspectRatio="none" viewBox="0 0 100 50" width="100%">
+<path d="M 0 50 Q 25 50 35 25 T 50 5 T 65 25 T 100 50" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<line class="opacity-50" stroke="currentColor" stroke-dasharray="2 2" stroke-width="1" vector-effect="non-scaling-stroke" x1="50" x2="50" y1="5" y2="50"></line>
+</svg>
+<div class="absolute bottom-0 text-[10px] text-outline-variant font-body-sm left-0 translate-y-full pt-1">-3σ</div>
+<div class="absolute bottom-0 text-[10px] text-primary font-label-caps font-bold translate-y-full pt-1">Mean (μ)</div>
+<div class="absolute bottom-0 text-[10px] text-outline-variant font-body-sm right-0 translate-y-full pt-1">+3σ</div>
+</div>
+</div>
+<div class="font-guide-text text-guide-text text-on-surface leading-relaxed">
+<p>The empirical rule, or the 68-95-99.7 rule, tells us that for a normal distribution, roughly 68% of the data falls within one standard deviation of the mean, 95% within two standard deviations, and 99.7% within three standard deviations.</p>
+</div>
+<!-- Example Block -->
+<div class="my-stack-lg border-l-4 border-[#F59E0B] bg-[#FFFBEB] p-4 rounded-r-xl dark:bg-surface-variant dark:border-[#F59E0B]">
+<h3 class="font-headline-sm text-headline-sm mb-2 text-on-surface">Real-world Example</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Think about adult human height. Most people are clustered around average height. There are fewer very tall or very short people, and extremely tall or extremely short people are rare. If you plotted the heights of a large random sample of adults, the resulting graph would closely resemble a bell curve.</p>
+</div>
+<!-- Key Takeaway Block -->
+<div class="my-stack-lg bg-surface-container-low rounded-xl p-5 shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] border border-surface-variant">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Key Takeaway</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant font-medium">The standard deviation controls the spread. A small standard deviation makes the bell tall and narrow; a large one makes it short and wide. Regardless of spread, the area under the curve always equals 1 (or 100%).</p>
+</div>
+</main>
+<!-- Sticky Bottom Actions -->
+<div class="fixed bottom-0 left-0 w-full md:w-[390px] md:left-auto bg-surface/95 backdrop-blur-xl border-t border-surface-variant p-4 z-40 pb-safe-area-bottom flex items-center justify-between shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)]">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Feedback</span>
+<div class="flex gap-2">
+<button aria-label="Confusing" class="flex items-center justify-center p-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">sentiment_dissatisfied</span>
+</button>
+<button aria-label="Clear" class="flex items-center justify-center p-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">sentiment_satisfied</span>
+</button>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-headline-md text-[16px] flex items-center gap-2 shadow-md hover:opacity-90 active:scale-95 transition-all">
+            Next Module
+            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<script>
+        // Simple script to handle scroll progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progressBar = document.querySelector('.progress-bar-fill');
+            if(progressBar) {
+                // Ensure we start from the current visual progress (65%) and grow to 100%
+                const baseProgress = 65;
+                const dynamicProgress = baseProgress + (scrolled * ((100 - baseProgress) / 100));
+                progressBar.style.width = Math.min(dynamicProgress, 100) + '%';
+            }
+        });
+    </script>
+</body></html>

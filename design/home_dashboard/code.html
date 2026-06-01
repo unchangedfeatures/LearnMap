@@ -1,0 +1,322 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>LearnMap - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Literata:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eef0f9",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary": "#006529",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f1f3fc",
+                        "surface-container-highest": "#e0e2eb",
+                        "surface-container": "#ebeef6",
+                        "on-primary-fixed-variant": "#0031c4",
+                        "secondary-fixed": "#e7deff",
+                        "secondary": "#6339db",
+                        "surface-variant": "#e0e2eb",
+                        "outline": "#747686",
+                        "tertiary-container": "#0d8038",
+                        "surface-container-high": "#e6e8f1",
+                        "secondary-container": "#7d56f5",
+                        "secondary-fixed-dim": "#ccbdff",
+                        "error-container": "#ffdad6",
+                        "surface": "#f9f9ff",
+                        "on-surface-variant": "#444655",
+                        "inverse-surface": "#2d3037",
+                        "on-primary-fixed": "#001159",
+                        "primary": "#2346d5",
+                        "surface-dim": "#d7dae2",
+                        "on-secondary-fixed": "#1f005f",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9ff",
+                        "on-primary-container": "#f4f2ff",
+                        "on-surface": "#181c22",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#4d17c5",
+                        "outline-variant": "#c4c5d7",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#bac3ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed": "#002109",
+                        "on-tertiary-fixed-variant": "#005320",
+                        "surface-tint": "#2e4edc",
+                        "on-tertiary-container": "#d1ffd1",
+                        "tertiary-fixed-dim": "#77dc87",
+                        "inverse-primary": "#bac3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#181c22",
+                        "tertiary-fixed": "#92f9a1",
+                        "primary-container": "#4361ee",
+                        "primary-fixed": "#dee1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "safe-area-bottom": "34px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "guide-text": ["Literata"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "guide-text": ["17px", { "lineHeight": "1.8", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .pulse-node {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(67, 97, 238, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0); }
+        }
+        .ai-gradient {
+            background: linear-gradient(135deg, #7048E8 0%, #4361EE 100%);
+        }
+        .streak-gradient {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+        }
+        
+        /* Hide scrollbar for horizontal scroll areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg antialiased min-h-screen flex justify-center pb-[100px]">
+<!-- Mobile Container (390px width) -->
+<main class="w-full max-w-[390px] relative min-h-screen shadow-2xl bg-surface-bright overflow-x-hidden">
+<!-- TopAppBar (From JSON) -->
+<header class="fixed top-0 left-0 w-full max-w-[390px] mx-auto z-50 flex justify-between items-center px-margin-mobile bg-surface/90 dark:bg-surface-container/90 backdrop-blur-xl docked full-width top-0 h-[52px] bg-surface/90 dark:bg-surface-container/90 flat no shadows" style="left: 50%; transform: translateX(-50%);">
+<div class="flex items-center gap-3">
+<img alt="User Avatar" class="w-8 h-8 rounded-full border border-surface-variant object-cover" data-alt="A small circular avatar portrait of a modern professional, well-lit studio lighting against a clean corporate background, consistent with a modern minimal smart assistant app UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfVWn4do3QKo0wNGW__0UdsfjimElCROmTuVuziFwhOkP6JBFmCPs3zlYHQcd6CBLM5e7GGaXY90XryRz-uSZRk1Zwkvz5XUakgYQ10nYEoNHBl5qutjXNtf_Wndh0LVLQtyJprzAJK2ChNBa34A6VbxTE_UdRUcVh_YTrgKfasOPm1fpGYxFYokjPYpWKkqbihLEHxD3-El2dNg0obPZOq4kb4sbq3FbnspLXdKQw4a18vyqRF0b9VjBl4YyCA2jmjh0PIE_hkAnq">
+<div>
+<h1 class="text-body-sm font-body-sm text-on-surface-variant leading-tight">Good morning,</h1>
+<p class="text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed leading-tight">Alex</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-error-container/20 px-3 py-1.5 rounded-full border border-error-container/50">
+<span class="text-[14px]">🔥</span>
+<span class="text-label-caps font-label-caps font-bold text-[#E53E3E]">14</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<div class="pt-[72px] px-margin-mobile flex flex-col gap-stack-lg pb-stack-lg">
+<!-- 1. Streak & XP Banner (Bento style) -->
+<section class="rounded-[16px] streak-gradient p-[1.5px] shadow-[0_4px_20px_0_rgba(255,107,107,0.15)] relative overflow-hidden group">
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="bg-surface-bright/95 backdrop-blur-md rounded-[14.5px] p-stack-md flex flex-row items-center justify-between">
+<div class="flex flex-col gap-1">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider">Weekly Goal</span>
+<div class="flex items-end gap-1">
+<span class="text-headline-md font-headline-md text-on-surface">1,250</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant pb-1">XP</span>
+</div>
+<!-- Mini progress bar -->
+<div class="w-full h-[8px] bg-tertiary-container/10 rounded-full mt-2 overflow-hidden">
+<div class="h-full bg-tertiary-container w-[75%] rounded-full relative">
+<div class="absolute inset-0 bg-white/20 w-1/2 skew-x-[-20deg] animate-[shimmer_2s_infinite]"></div>
+</div>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-[#FF6B6B]/10 flex items-center justify-center border border-[#FF6B6B]/20">
+<span class="material-symbols-outlined text-[#FF6B6B]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+</section>
+<!-- 2. Continue Learning Card (Glassmorphism + Asymmetric) -->
+<section>
+<div class="flex justify-between items-end mb-stack-sm">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Continue Learning</h2>
+<button class="text-label-caps font-label-caps text-primary">VIEW ALL</button>
+</div>
+<div class="bg-surface-bright rounded-[16px] shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] border border-surface-container-lowest overflow-hidden">
+<div class="p-stack-md flex gap-4 items-start">
+<div class="w-[60px] h-[60px] rounded-lg overflow-hidden shrink-0 bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[32px]" data-icon="javascript" data-weight="fill" style="font-variation-settings: 'FILL' 1;">javascript</span>
+</div>
+<div class="flex flex-col flex-grow">
+<span class="text-label-caps font-label-caps text-secondary uppercase bg-secondary-fixed/50 self-start px-2 py-1 rounded-[4px] mb-1">Module 4</span>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface leading-tight mb-1">Advanced Asynchronous Patterns</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-1">Promises, async/await, and event loop deep dive.</p>
+</div>
+</div>
+<!-- Horizontal Roadmap Preview -->
+<div class="bg-surface-container-low px-stack-md py-4 border-t border-surface-variant flex items-center justify-between relative">
+<!-- Connecting Line -->
+<div class="absolute top-1/2 left-stack-md right-stack-md h-[2px] bg-outline-variant -translate-y-1/2 z-0"></div>
+<!-- Nodes -->
+<div class="relative z-10 w-3 h-3 rounded-full bg-primary ring-4 ring-surface-container-low"></div>
+<div class="relative z-10 w-3 h-3 rounded-full bg-primary ring-4 ring-surface-container-low"></div>
+<div class="relative z-10 w-3 h-3 rounded-full bg-primary ring-4 ring-surface-container-low"></div>
+<!-- Current Node -->
+<div class="relative z-10 w-4 h-4 rounded-full bg-secondary ring-4 ring-surface-container-low pulse-node flex items-center justify-center">
+<div class="w-2 h-2 bg-white rounded-full"></div>
+</div>
+<!-- Future Nodes -->
+<div class="relative z-10 w-3 h-3 rounded-full bg-surface-dim ring-4 ring-surface-container-low"></div>
+<div class="relative z-10 w-3 h-3 rounded-full bg-surface-dim ring-4 ring-surface-container-low"></div>
+</div>
+<div class="p-stack-sm bg-surface-bright flex justify-end">
+<button class="bg-primary text-white font-label-caps text-label-caps px-4 py-2 rounded-[12px] flex items-center gap-2 hover:bg-surface-tint transition-colors">
+                            RESUME
+                            <span class="material-symbols-outlined text-[16px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 3. Your Roadmaps (Horizontal Scroll Row) -->
+<section>
+<div class="flex justify-between items-end mb-stack-sm">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Your Roadmaps</h2>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 -mx-margin-mobile px-margin-mobile no-scrollbar snap-x">
+<!-- Roadmap Card 1 -->
+<div class="shrink-0 w-[240px] bg-surface-bright rounded-[16px] shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] border border-surface-container-lowest p-stack-md snap-start flex flex-col justify-between h-[140px]">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div class="w-8 h-8 rounded bg-primary-fixed/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="data_object">data_object</span>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">60%</span>
+</div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">React Mastery</h3>
+</div>
+<div class="w-full h-[6px] bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[60%] rounded-full"></div>
+</div>
+</div>
+<!-- Roadmap Card 2 -->
+<div class="shrink-0 w-[240px] bg-surface-bright rounded-[16px] shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] border border-surface-container-lowest p-stack-md snap-start flex flex-col justify-between h-[140px]">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div class="w-8 h-8 rounded bg-secondary-fixed/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="design_services">design_services</span>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">15%</span>
+</div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">UI/UX Fundamentals</h3>
+</div>
+<div class="w-full h-[6px] bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[15%] rounded-full"></div>
+</div>
+</div>
+<!-- New Roadmap Action -->
+<div class="shrink-0 w-[120px] bg-surface-container-low rounded-[16px] border border-dashed border-outline-variant p-stack-md snap-start flex flex-col items-center justify-center h-[140px] hover:bg-surface-container transition-colors cursor-pointer text-center">
+<div class="w-10 h-10 rounded-full bg-surface-bright shadow-sm flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="add">add</span>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">Explore<br>New</span>
+</div>
+</div>
+</section>
+<!-- 4. Suggested for today (AI Generated - Purple Accent) -->
+<section class="mb-stack-lg">
+<div class="flex items-center gap-2 mb-stack-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="auto_awesome">auto_awesome</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Suggested for today</h2>
+</div>
+<div class="bg-surface-bright rounded-[16px] shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] overflow-hidden relative">
+<!-- AI Top Accent Bar -->
+<div class="absolute top-0 left-0 right-0 h-[2px] ai-gradient"></div>
+<div class="p-stack-md">
+<div class="flex gap-4">
+<div class="w-[80px] h-[80px] rounded-[12px] overflow-hidden shrink-0 relative bg-surface-variant">
+<img alt="Code Review" class="w-full h-full object-cover" data-alt="A close up shot of a sleek modern laptop screen displaying colorful code syntax on a dark theme text editor. The lighting is moody with subtle blue and purple neon reflections on the keyboard. Minimalist high tech aesthetic suitable for a modern learning app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-s5d2y8Gj4pd2VAQYooqNVQwk15tPaezIkOl2mjmZCpiPliTxR4fSZdYcLgtTfv8GrjpWSvlwTaxfv4Ky6CT5kfFDka5Pgl7GDWwofYcDDDhno4i_jwcA9W8JzVCnWKqhMfey--Xn3f3q4hBLvjl7ktyUs2Z7zR9raeqS9qiTttSAWq1WF7-P8U8ORyMohFCVi80j1rkd1n3xkhsCWf87aGUvYeJuMAFte7vcJsz0GvJyke6f9PPoosUJtrClXfZVIFRtFJtHD0wP">
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[24px]" data-icon="article">article</span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-label-caps font-label-caps text-secondary uppercase bg-secondary/10 w-fit px-2 py-1 rounded-[4px] mb-2 text-[10px]">Short Read • 5 Min</span>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface leading-tight mb-1">Understanding React Hooks under the hood</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-2">A quick conceptual refresh based on your recent struggles with useEffect dependencies.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- BottomNavBar (From JSON) -->
+<nav class="fixed bottom-0 left-0 w-full max-w-[390px] mx-auto z-50 flex justify-around items-center px-2 pb-safe-area-bottom pt-2 bg-surface/90 dark:bg-surface-container/90 backdrop-blur-xl docked full-width bottom-0 rounded-t-xl shadow-[0_-4px_20px_0_rgba(0,0,0,0.1)] dark:shadow-none shadow-lg" style="left: 50%; transform: translateX(-50%);">
+<!-- Active Tab: Home -->
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-secondary-container text-on-primary-container dark:text-on-secondary-container rounded-xl px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant scale-90 duration-200">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-caps font-label-caps">Home</span>
+</button>
+<!-- Inactive Tab: Roadmaps -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="map">map</span>
+<span class="text-label-caps font-label-caps">Roadmaps</span>
+</button>
+<!-- Inactive Tab: Progress -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="leaderboard">leaderboard</span>
+<span class="text-label-caps font-label-caps">Progress</span>
+</button>
+<!-- Inactive Tab: Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="person">person</span>
+<span class="text-label-caps font-label-caps">Profile</span>
+</button>
+</nav>
+</main>
+<style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(200%);
+            }
+        }
+    </style>
+</body></html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnMap - Start Your Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f7f9fb",
+                    "error": "#ba1a1a",
+                    "secondary": "#4c45d5",
+                    "outline": "#747686",
+                    "tertiary-fixed-dim": "#ffb692",
+                    "outline-variant": "#c4c5d7",
+                    "on-tertiary-fixed-variant": "#793000",
+                    "on-primary-container": "#f4f2ff",
+                    "secondary-fixed": "#e2dfff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#4361ee",
+                    "inverse-surface": "#2d3133",
+                    "secondary-fixed-dim": "#c2c1ff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#933c00",
+                    "primary": "#2346d5",
+                    "inverse-primary": "#bac3ff",
+                    "tertiary-container": "#ba4e00",
+                    "on-secondary-fixed-variant": "#352ac0",
+                    "on-surface-variant": "#444655",
+                    "on-primary-fixed": "#001159",
+                    "on-surface": "#191c1e",
+                    "surface-tint": "#2e4edc",
+                    "on-secondary-fixed": "#0e006a",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary-container": "#6561f0",
+                    "tertiary-fixed": "#ffdbcb",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#0031c4",
+                    "surface-container": "#eceef0",
+                    "surface-bright": "#f7f9fb",
+                    "surface-dim": "#d8dadc",
+                    "on-tertiary-fixed": "#341100",
+                    "on-secondary-container": "#fffbff",
+                    "on-tertiary-container": "#fff1eb",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e0e3e5",
+                    "on-background": "#191c1e",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-high": "#e6e8ea",
+                    "primary-fixed-dim": "#bac3ff",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#dee1ff",
+                    "background": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "4rem",
+                    "base": "8px",
+                    "max-width": "1440px",
+                    "gutter": "24px",
+                    "md": "1.5rem",
+                    "lg": "2.5rem",
+                    "xs": "0.5rem",
+                    "sm": "1rem",
+                    "margin": "48px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "label-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "500"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "600"}],
+                    "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -10px rgba(35, 70, 213, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low shadow-sm flex flex-col py-lg px-md z-50">
+<div class="mb-xl px-xs">
+<h1 class="font-display-lg text-display-lg font-bold text-primary">LearnMap</h1>
+<p class="font-label-md text-label-md text-on-surface-variant opacity-70">AI Learning Platform</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active State Logic: Home is active for empty state dashboard -->
+<a class="flex items-center gap-sm p-sm rounded-lg text-primary font-bold border-r-4 border-primary transition-all duration-200 cursor-pointer active:scale-95 bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-body-md text-body-md">Home</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-body-md text-body-md">Roadmaps</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-body-md text-body-md">Progress</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-body-md text-body-md">Profile</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto space-y-4">
+<button class="w-full bg-primary text-on-primary h-12 px-md font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-xs hover:shadow-lg transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Roadmap
+            </button>
+<div class="pt-md border-t border-outline-variant">
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-body-md text-body-md">Help</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg text-on-surface-variant hover:text-error transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-body-md text-body-md">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 h-20 bg-surface-bright flex items-center justify-between px-lg z-40">
+<div class="flex items-center bg-surface-container-low rounded-full px-md py-xs w-96 transition-all duration-200 focus-within:ring-2 focus-within:ring-primary focus-within:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface" placeholder="Search topics or roadmaps..." type="text"/>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-high rounded-full transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-secondary-container overflow-hidden ring-2 ring-surface cursor-pointer">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYTv4cplNYYvbbjTllA7oowgVpLV2CR5Ioi7pTer0hMAdJ97hsW6V5USyHlGYqw8Ao44DkFAgoWDrd5wwBozWDzErhWG7Mjpqc0JbOxKaMyL0o0FyV62s1X5AnpHGuRSBTO8vv7-mYHC1lSzHEtXX9fWmaZYBOMm-gkhldrMVY_T0y-5yOCBrcAELJ1Fs5prR7NAh2uoH81cBI3pFlvQOg2P7kpbTLP-8_JEPchkBGP6snLUdAWZyYltbv7xFBclGnHlOnZe2iZgzT"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 min-h-screen">
+<div class="max-w-[1440px] mx-auto px-margin py-xl">
+<!-- Hero Empty State Section -->
+<section class="flex flex-col items-center justify-center text-center py-xl">
+<div class="bg-surface-container-lowest rounded-[2rem] p-xl ambient-shadow max-w-4xl w-full border border-surface-container-highest flex flex-col items-center">
+<div class="relative w-full aspect-[21/9] rounded-2xl overflow-hidden mb-lg">
+<img alt="Learning journey illustration" class="w-full h-full object-cover" data-alt="A clean, minimalist digital 3D illustration of a peaceful workspace with a levitating open book and soft geometric shapes. The lighting is bright and high-key, creating a calm and intellectual atmosphere. The color palette features soft whites, primary blues, and deep indigo accents, maintaining a professional corporate aesthetic with generous white space and soft ambient shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjISKCJ6FrE4GIJL9RcuPOe9dpHwykJ9Z45KUNOOD1fcgPvuGI5jN_bBvPLxSH2VPAxlqM3JgV5NuhM61n1nZ1j-b9QJKFzfWIvwS-nni95as6QsxYEmIyGVrK7edvu55qzTYvLvnWXvFgMk7c32-LAL5Lr5cKoi2zqoHHzv4fkNpprP9y771_eNWmEQ6ZZmCqnyAQHp_PqXr3WzQY_ClzxCCZ8jpFQw4r5nD1zINBWvT1_z_XbmZ3WMYj2X7RrkhjGZzaN6TktPAP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent"></div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Ready to master something new?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-lg">Your learning path is a blank canvas. Start by exploring our curated modules or generate a custom roadmap tailored to your career goals.</p>
+<div class="flex flex-col sm:flex-row gap-md">
+<button class="bg-primary text-on-primary h-12 px-lg rounded-full font-label-lg text-label-lg flex items-center justify-center gap-xs hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                            Start your first module
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="bg-surface-container-high text-primary h-12 px-lg rounded-full font-label-lg text-label-lg flex items-center justify-center gap-xs hover:bg-surface-variant transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+                            Browse Library
+                        </button>
+</div>
+</div>
+</section>
+<!-- Secondary Empty State: Roadmaps -->
+<section class="mt-xl">
+<div class="flex items-center justify-between mb-lg px-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Your Roadmaps</h3>
+<button class="text-primary font-label-lg text-label-lg flex items-center gap-xs hover:underline">
+                        View all <span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Empty Roadmap Grid Pattern -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Placeholder Card 1 -->
+<div class="col-span-12 md:col-span-4 aspect-[4/3] bg-surface-container-low border-2 border-dashed border-outline-variant rounded-[1.5rem] flex flex-col items-center justify-center p-lg group cursor-pointer hover:border-primary/40 transition-colors">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center mb-md text-outline-variant group-hover:text-primary group-hover:bg-primary-fixed transition-all">
+<span class="material-symbols-outlined text-[32px]" data-icon="add_circle">add_circle</span>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface-variant mb-xs">Create Roadmap</p>
+<p class="font-label-md text-label-md text-outline text-center">Define your goal and let AI build the path</p>
+</div>
+<!-- Subtle Informational Card 1 -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest rounded-[1.5rem] p-lg border border-surface-container-highest shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-md opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-display-lg" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="inline-block px-sm py-1 bg-secondary-fixed text-on-secondary-fixed-variant rounded-full font-label-md text-label-md mb-md">Quick Tip</span>
+<h4 class="font-title-lg text-title-lg mb-sm">AI Suggestions</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We've noticed you're interested in System Design. Would you like to start a roadmap for distributed systems?</p>
+<button class="mt-md text-primary font-label-lg text-label-lg flex items-center gap-xs">
+                            Learn more <span class="material-symbols-outlined text-[16px]" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<!-- Subtle Informational Card 2 -->
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest rounded-[1.5rem] p-lg border border-surface-container-highest shadow-sm flex flex-col justify-between">
+<div>
+<h4 class="font-title-lg text-title-lg mb-sm">Community Choice</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Check out what other LearnMap users are studying this week in your field.</p>
+</div>
+<div class="mt-lg flex -space-x-2">
+<img alt="User" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXcvC5qOODLXNrlbcNvzV7I4QmMjKA5iK5Amt-3Ms0nT3s-K4Od8Kr24SGsf8Lb-nNWmNWnEsZKSxanhtJBTB7G2hrt1gLbcxdYJ_z3MiTbBelNqHTppb3uGVpCiwA1jOADG84AgPdeKQ6D2NRF0usMFM6TB00EjcqvGcRgq1esFllK1wbB_q3jzgND2_AKEHNkvLQS5fSydZve95yR8ec-mdIgBgLOubn2XY2rwYnoM9IGUtcGnKBo95sxFyI2MHZtQ8w89tlR7zk"/>
+<img alt="User" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2vEO_j5-kMP-qB7P0Qvu5PgXWeEkpqZ7q0wXHi62YPZACbUkI958UsmcUI28NMyj6cxRycwPwb4n3dN3aFqEZ8P4KbnQe6rjgbtALHeKz880kGo-i9U7ezJ4ezlnWIdMGr4ZnQl_VuIKnFBrbDf0fRQf_v4tECh4mrkF_Xke_B9pSnOzxlIu6EsbaovIxf0F2rriAK8YO11UatMYrjYfxt-7BTtpxa9_25ieOyIFepFd-rT9b-wZs-TEL-C-4AOTGd22PUe5z_erX"/>
+<img alt="User" class="w-8 h-8 rounded-full border-2 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEJHPTOlvvxiR0Wj1xAMkNA7aB3kR7CTG7axPbN5Y4zyG310nuOPu1smOXOVoq-eSmnUARvtB_oR3crpt7bV7IgMIcNuM7KL8HJ3ASRcoxX9Or09lDLIv1jy4r1btV3aH_ev8-J5NMH96HsIHELxlix-kFttVOU4Acc9E0PU1r7RqRNmv4k6zGlbb0DtXrG6jhBhtXP9Kz0qc0L7QUStEhMJIGlx1i22DnKIWSigPMsIFi4LGVMkafkRPJ0hnJM2LUTNierb-vJvrP"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center text-[10px] font-bold text-outline">+12k</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Simple Hover Interaction Script -->
+<script>
+        document.querySelectorAll('.active\\:scale-95').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'scale(0.95)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'scale(1)';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        const searchContainer = searchInput.parentElement;
+        searchInput.addEventListener('focus', () => {
+            searchContainer.classList.add('shadow-md');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchContainer.classList.remove('shadow-md');
+        });
+    </script>
+</body></html>

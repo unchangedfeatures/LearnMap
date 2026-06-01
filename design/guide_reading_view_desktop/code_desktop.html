@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnMap - Reading View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#ba4e00",
+                    "surface-variant": "#e0e3e5",
+                    "surface-dim": "#d8dadc",
+                    "surface-container": "#eceef0",
+                    "on-surface-variant": "#444655",
+                    "on-primary-container": "#f4f2ff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#352ac0",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary": "#4c45d5",
+                    "inverse-primary": "#bac3ff",
+                    "secondary-fixed": "#e2dfff",
+                    "on-background": "#191c1e",
+                    "background": "#f7f9fb",
+                    "outline": "#747686",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#bac3ff",
+                    "on-secondary-fixed": "#0e006a",
+                    "inverse-on-surface": "#eff1f3",
+                    "error": "#ba1a1a",
+                    "tertiary": "#933c00",
+                    "primary-container": "#4361ee",
+                    "tertiary-fixed": "#ffdbcb",
+                    "surface": "#f7f9fb",
+                    "secondary-container": "#6561f0",
+                    "secondary-fixed-dim": "#c2c1ff",
+                    "on-surface": "#191c1e",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-fixed": "#341100",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#0031c4",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "surface-tint": "#2e4edc",
+                    "outline-variant": "#c4c5d7",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#793000",
+                    "primary": "#2346d5",
+                    "on-secondary-container": "#fffbff",
+                    "tertiary-fixed-dim": "#ffb692",
+                    "primary-fixed": "#dee1ff",
+                    "on-tertiary-container": "#fff1eb",
+                    "surface-container-low": "#f2f4f6",
+                    "on-primary-fixed": "#001159",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "1rem",
+                    "md": "1.5rem",
+                    "xl": "4rem",
+                    "lg": "2.5rem",
+                    "base": "8px",
+                    "xs": "0.5rem",
+                    "margin": "48px",
+                    "max-width": "1440px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "500"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f7f9fb;
+            color: #191c1e;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e0e3e5;
+            border-radius: 10px;
+        }
+        .reading-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-surface">
+<!-- Side Navigation Shell -->
+<aside class="bg-surface-container-low h-screen w-64 fixed left-0 top-0 flex flex-col py-lg px-md z-50">
+<div class="mb-xl px-xs">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">LearnMap</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">AI Learning Platform</p>
+</div>
+<nav class="flex-1 space-y-xs">
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors group" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl text-primary font-bold bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-label-lg text-label-lg">Roadmaps</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-lg text-label-lg">Progress</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-lg text-label-lg">Profile</span>
+</a>
+</nav>
+<div class="mt-auto space-y-xs">
+<button class="w-full bg-primary text-on-primary py-sm rounded-xl font-label-lg text-label-lg mb-md hover:opacity-90 transition-opacity active:scale-[0.98]">
+                New Roadmap
+            </button>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-lg text-label-lg">Settings</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-lg text-label-lg">Help</span>
+</a>
+</div>
+</aside>
+<!-- Top Navigation Anchor (Desktop Integration) -->
+<header class="fixed top-0 right-0 left-64 h-20 bg-surface flex justify-between items-center px-xl z-40 border-b border-surface-variant/50">
+<div class="flex items-center gap-md flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-xl py-xs focus:ring-2 focus:ring-primary font-body-md text-body-md" placeholder="Search resources..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<button class="relative p-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young male professional in his late 20s with short groomed hair and a kind expression. He is wearing a clean charcoal grey sweater against a soft, out-of-focus modern office background with warm wooden textures and cool blue accent lighting. The image quality is high-resolution with a natural, soft-key lighting aesthetic typical of high-end corporate photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBxgIKS5Hz5mxUQcUgf4g0Ps6OvWjxDtJSoq_6sv9JgUiZyjcznp7BQzLtaMNzkOH9Sr-rAl0obGDMKaEmMNneyWm_Tv_5YJvvqIKIZuh63knM8b5znctJ-AAtEXS65QKJ5o_5ncavuPSpDqrLuNxsJEhSxoCq1V3yAmVf0J0eurP3x5g7QlpeGyx-gkNRdqHyNFUdGd85wO42jD7wsOqh4W9vYIHW6AyirB8yFp_YoBCo_-M6wpF7jlrjUnfQwDODtPmZ6zcQGmhH"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 pb-32 min-h-screen">
+<div class="reading-container px-lg mt-xl">
+<!-- AI Mentor Note -->
+<section class="bg-primary-container/10 border-l-4 border-primary rounded-xl p-lg mb-lg flex gap-lg items-start">
+<div class="bg-primary-container p-sm rounded-full text-on-primary-container flex shrink-0">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg text-primary mb-xs">AI Mentor Note</h4>
+<p class="font-body-lg text-body-lg text-on-surface">You're progressing quickly through the "Statistical Foundations" module. This section on Normal Distribution is critical for the upcoming "Machine Learning" roadmap you've prioritized. Take a moment to grasp the 68-95-99.7 rule.</p>
+</div>
+</section>
+<!-- Main Text Content -->
+<article class="space-y-lg">
+<div class="space-y-sm">
+<span class="font-label-lg text-label-lg text-primary uppercase tracking-widest">Chapter 04: Probability Distributions</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Understanding the Normal Distribution</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">The normal distribution, often called the Gaussian distribution, is the most important probability distribution in statistics. Many real-world phenomena, from heights and blood pressure to measurement errors, naturally follow this symmetric bell-shaped pattern.</p>
+</div>
+<!-- High-Quality Diagram Section -->
+<figure class="bg-surface-container-lowest rounded-xl p-lg shadow-sm border border-outline-variant/30 text-center">
+<div class="w-full aspect-video rounded-lg overflow-hidden mb-md">
+<img alt="Bell Curve Diagram" class="w-full h-full object-cover" data-alt="A clean, minimalist 3D rendering of a mathematical bell curve or normal distribution graph. The curve is rendered in a vibrant primary blue neon glow against a pristine white and light grey grid background. Subtle translucent overlays highlight the standard deviation zones with soft gradients. The visual style is highly technical, professional, and elegant, suitable for a premium educational platform for data scientists." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ7yzJZuAV44H8I0JSPcE-QRwYTbZzFkahGJs2JbcJPl3N9sXgXCrssU4PhgZIws3cG3RrfUoRjXwRlAzkPToH142yrB5qvHoVEQ3LN37TQVuGdjT7L-897IFsoM3BPdB055YOnpg01yGZVEVh4o4SZkQ3FP6Ma-VohVB8lAirURuJaBABgnX3ZJ8J0_ssIznyzZEBbcj_epfIR8uULU2acG3EAYTkgEF248MwHqrK894gUUB9FIg1vTZxU0GeRyy7JDR-ESLps_Kn"/>
+</div>
+<figcaption class="font-label-md text-label-md text-outline italic">Figure 4.1: The Standard Normal Distribution showing Z-scores and probability density.</figcaption>
+</figure>
+<div class="space-y-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">The Empirical Rule</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">For any normally distributed dataset, the following approximations hold true:</p>
+<ul class="space-y-sm list-none pl-0">
+<li class="flex items-start gap-md">
+<span class="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></span>
+<span class="font-body-lg text-body-lg text-on-surface-variant"><strong>68%</strong> of data falls within one standard deviation (σ) of the mean (μ).</span>
+</li>
+<li class="flex items-start gap-md">
+<span class="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></span>
+<span class="font-body-lg text-body-lg text-on-surface-variant"><strong>95%</strong> falls within two standard deviations.</span>
+</li>
+<li class="flex items-start gap-md">
+<span class="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></span>
+<span class="font-body-lg text-body-lg text-on-surface-variant"><strong>99.7%</strong> falls within three standard deviations.</span>
+</li>
+</ul>
+</div>
+<!-- Real-world Example Box -->
+<div class="bg-surface-container-low rounded-xl p-lg border border-outline-variant/50 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-lg opacity-10">
+<span class="material-symbols-outlined text-[80px]">lightbulb</span>
+</div>
+<h4 class="font-title-lg text-title-lg text-secondary mb-sm flex items-center gap-xs">
+<span class="material-symbols-outlined">lightbulb</span>
+                        Real-world Example
+                    </h4>
+<p class="font-body-md text-body-md text-on-surface relative z-10">Imagine a factory producing lightbulbs. If the average lifespan is 1,000 hours with a standard deviation of 50 hours, the normal distribution tells us that roughly 95% of all bulbs will last between 900 and 1,100 hours. This predictability allows companies to set warranty periods accurately.</p>
+</div>
+<!-- Key Takeaway Box -->
+<div class="bg-tertiary-fixed rounded-xl p-lg border border-on-tertiary-fixed-variant/20 shadow-sm">
+<h4 class="font-title-lg text-title-lg text-on-tertiary-fixed-variant mb-sm flex items-center gap-xs">
+<span class="material-symbols-outlined">key</span>
+                        Key Takeaway
+                    </h4>
+<p class="font-body-md text-body-md text-on-tertiary-fixed leading-relaxed">Central Limit Theorem ensures that as sample sizes grow, the distribution of the sample mean will approach a normal distribution, regardless of the population's shape. This is why normal distribution is the bedrock of inferential statistics.</p>
+</div>
+</article>
+<!-- Navigation Footer -->
+<footer class="mt-xl pt-lg border-t border-outline-variant/30 flex items-center justify-between">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg">
+<span class="material-symbols-outlined">arrow_back</span>
+                    Previous Module
+                </button>
+<div class="flex items-center gap-md">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed border-2 border-surface flex items-center justify-center text-[10px] font-bold text-primary">JD</div>
+<div class="w-8 h-8 rounded-full bg-secondary-fixed border-2 border-surface flex items-center justify-center text-[10px] font-bold text-secondary">AM</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-surface flex items-center justify-center text-[10px] font-bold text-on-surface-variant">+12</div>
+</div>
+<span class="font-label-md text-label-md text-outline">Learning now</span>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-xl font-label-lg text-label-lg flex items-center gap-sm hover:opacity-90 transition-opacity active:scale-[0.98]">
+                    Next Module
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</footer>
+</div>
+</main>
+<!-- Interactive Progress Indicator (Floating) -->
+<div class="fixed bottom-lg right-lg bg-surface shadow-lg rounded-full border border-outline-variant/30 px-lg py-md flex items-center gap-md z-40 transition-transform hover:scale-105 cursor-pointer">
+<div class="relative w-12 h-12">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-high" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary transition-all duration-1000" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="37.6" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center text-[10px] font-bold">70%</div>
+</div>
+<div class="hidden xl:block">
+<p class="font-label-lg text-label-lg text-on-surface">Module Progress</p>
+<p class="font-label-md text-label-md text-outline">3 mins left in chapter</p>
+</div>
+</div>
+<script>
+        // Simple micro-interaction for reading progress
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            
+            // This is just a placeholder logic for visual feedback
+            // Real apps would update the SVG dashoffset dynamically
+        };
+
+        // Smooth reveal of elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const article = document.querySelector('article');
+            article.style.opacity = '0';
+            article.style.transform = 'translateY(20px)';
+            article.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            
+            setTimeout(() => {
+                article.style.opacity = '1';
+                article.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body></html>

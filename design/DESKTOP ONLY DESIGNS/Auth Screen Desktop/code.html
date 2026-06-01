@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | LearnMap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;family=Literata:wght@400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#242a3a",
+                        "inverse-primary": "#2e4edc",
+                        "surface-variant": "#2e3446",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#0031c4",
+                        "text-muted": "#eef0f9",
+                        "tertiary-container": "#297f3f",
+                        "surface-container-lowest": "#080e1d",
+                        "text-on-dark": "#ffffff",
+                        "surface-bright": "#33394a",
+                        "on-error": "#690005",
+                        "glass-fill": "rgba(255, 255, 255, 0.1)",
+                        "surface-container": "#191f30",
+                        "tertiary-fixed-dim": "#84d98f",
+                        "on-primary-fixed": "#001159",
+                        "primary-fixed-dim": "#bac3ff",
+                        "inverse-surface": "#dde2f9",
+                        "background": "#0d1323",
+                        "tertiary-fixed": "#9ff6a9",
+                        "surface-container-highest": "#2e3446",
+                        "glass-border": "rgba(255, 255, 255, 0.2)",
+                        "surface-container-low": "#151b2b",
+                        "on-secondary-fixed-variant": "#4d17c5",
+                        "primary": "#bac3ff",
+                        "synapse-glow": "rgba(67, 97, 238, 0.4)",
+                        "on-secondary-fixed": "#1f0060",
+                        "primary-container": "#4361ee",
+                        "on-tertiary-container": "#d5ffd5",
+                        "primary-fixed": "#dee1ff",
+                        "on-tertiary": "#003914",
+                        "on-secondary-container": "#bfadff",
+                        "on-surface": "#dde2f9",
+                        "surface": "#0d1323",
+                        "secondary-fixed-dim": "#ccbdff",
+                        "on-tertiary-fixed": "#002109",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#4f1cc8",
+                        "surface-dim": "#0d1323",
+                        "on-primary": "#00218d",
+                        "space-deep": "#0F1525",
+                        "tertiary": "#84d98f",
+                        "inverse-on-surface": "#2a3041",
+                        "secondary-fixed": "#e7deff",
+                        "error-container": "#93000a",
+                        "space-indigo": "#1A2456",
+                        "secondary": "#ccbdff",
+                        "surface-tint": "#bac3ff",
+                        "outline": "#8e8fa1",
+                        "on-background": "#dde2f9",
+                        "on-tertiary-fixed-variant": "#005320",
+                        "on-secondary": "#350097",
+                        "outline-variant": "#444655",
+                        "on-surface-variant": "#c4c5d7",
+                        "on-primary-container": "#f4f2ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "8px",
+                        "lg": "12px",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px",
+                        "stack-sm": "8px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "base": "4px",
+                        "safe-area-bottom": "34px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "guide-text": ["Literata"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "guide-text": ["17px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>body { background: radial-gradient(circle at center, #1A2456 0%, #0d1323 100%); overflow: hidden; } .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); } canvas#particleCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }</style>
+</head>
+<body class="flex items-center justify-center min-h-screen font-body-lg text-on-surface">
+<canvas id="particleCanvas"></canvas>
+<!-- Content Wrapper (Split Screen Style for Desktop) -->
+<main class="relative w-full max-w-md mx-auto px-margin-mobile flex items-center justify-center min-h-[calc(100vh-80px)]"><div class="w-full bg-white rounded-xl p-8 md:p-10 shadow-2xl flex flex-col space-y-stack-lg text-surface-dim"><div class="flex flex-col items-center mb-4"><h1 class="font-display-lg text-display-lg font-extrabold text-primary-container tracking-tighter">LearnMap</h1><p class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase tracking-widest">Intelligent Learning</p></div><div class="space-y-1 text-center"><h2 class="font-headline-sm text-headline-sm text-surface-container-lowest">Welcome Back</h2><p class="text-on-surface-variant text-sm opacity-70">Sign in to your account</p></div><div class="flex flex-col space-y-3"><button class="flex items-center justify-center gap-3 px-4 py-2.5 border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors duration-200"><img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDROnD5KAJR9KPElPvOEY2vS9dedMNekAq5PCQ77SVM8NSxaE_PtuZ7pAzBmzr4TTIY5Faq74d5C4lAvfw_25c68nuoBfSeFKZ2vrz8zSCcFvJJ9b9Zn1b4gi8oGHDDjftmp1PXGibEivmjHhiGdveLcGFrFYUWqDU2KNK8TnF0gg12cEyWEcuxGx23C8QRdjgC8v6M5xE9aHHbzk5A70sVo1pnSyL-ldmX-nPjyXtZu4NGSiNbibBlJHImvQDAO4Sr8aRLJIWnPF3R"/><span class="font-label-caps text-label-caps text-surface-container-lowest">Google</span></button><button class="flex items-center justify-center gap-3 px-4 py-2.5 bg-[#5865F2] text-white rounded-lg hover:opacity-90 transition-opacity duration-200"><img alt="Discord" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl1Mwp6rZ5s44p2yxQpZk6n0LUwU0oO2qjNVRMrSBBekGdutTTp08xCCZK7z2NhuK522t7aAmET5qZL-rIE7a3udFIpmpgsIFhfIARSrxoQwfbUcTVfZPmCiIjYT7evttFIjVzh7kJpM7y0kWh6Dg50g6HmrMBAsAN7zzhxY9_j8vE7SOdL9-nr4bdMAf5fTocWho0ynVk51SqSSoOFj8WyzgO1ayQDDtvqODZR7Y1HUB2brVITVdcbTa1IyjVAL5fF_-OSLt6W54u"/><span class="font-label-caps text-label-caps">Discord</span></button></div><div class="relative flex items-center py-2"><div class="flex-grow border-t border-outline-variant/30"></div><span class="flex-shrink mx-4 font-label-caps text-[10px] text-on-surface-variant uppercase">or use email</span><div class="flex-grow border-t border-outline-variant/30"></div></div><form class="flex flex-col space-y-4" onsubmit="event.preventDefault();"><div class="space-y-1.5"><label class="font-label-caps text-[11px] text-surface-container-lowest uppercase" for="email">Email</label><input class="w-full px-4 py-2.5 rounded-lg border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all placeholder:text-outline/50 text-surface-container-lowest text-sm" id="email" placeholder="name@domain.com" type="email"/></div><div class="space-y-1.5"><div class="flex justify-between items-center"><label class="font-label-caps text-[11px] text-surface-container-lowest uppercase" for="password">Password</label><a class="font-label-caps text-[11px] text-primary-container hover:underline uppercase" href="#">Forgot?</a></div><input class="w-full px-4 py-2.5 rounded-lg border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all placeholder:text-outline/50 text-surface-container-lowest text-sm" id="password" placeholder="••••••••" type="password"/></div><button class="w-full bg-primary-container text-white py-3.5 rounded-lg font-bold shadow-lg hover:shadow-primary-container/20 hover:translate-y-[-1px] active:translate-y-[0px] transition-all text-sm" type="submit">Log In</button></form><p class="text-center font-label-caps text-[11px] text-on-surface-variant">Don't have an account? <a class="text-primary-container font-bold hover:underline" href="#">Sign up</a></p></div></main>
+<!-- Footer Area (Global Shell) -->
+<footer class="fixed bottom-0 left-0 w-full px-margin-mobile py-6 flex justify-center md:justify-between items-center z-40 text-on-surface-variant font-label-caps text-[10px] opacity-40 uppercase tracking-widest">
+<span class="font-label-caps text-label-caps text-primary">© 2024 LearnMap. Interconnected Intelligence.</span>
+<div class="hidden md:flex gap-gutter">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Security</a>
+</div>
+</footer>
+<script>
+        // Subtle Particle Background Logic
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.2;
+                this.speedY = (Math.random() - 0.5) * 0.2;
+                this.opacity = Math.random() * 0.5;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(186, 195, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function createParticles() {
+            for (let i = 0; i < 80; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        createParticles();
+        animate();
+    </script>
+</body></html>

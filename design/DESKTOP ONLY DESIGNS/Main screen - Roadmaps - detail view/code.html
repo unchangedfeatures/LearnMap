@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LearnMap - Predictive Modeling &amp; Algorithms</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#ba4e00",
+                        "surface-variant": "#e0e3e5",
+                        "surface-dim": "#d8dadc",
+                        "surface-container": "#eceef0",
+                        "on-surface-variant": "#444655",
+                        "on-primary-container": "#f4f2ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#352ac0",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary": "#4c45d5",
+                        "inverse-primary": "#bac3ff",
+                        "secondary-fixed": "#e2dfff",
+                        "on-background": "#191c1e",
+                        "background": "#f7f9fb",
+                        "outline": "#747686",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#bac3ff",
+                        "on-secondary-fixed": "#0e006a",
+                        "inverse-on-surface": "#eff1f3",
+                        "error": "#ba1a1a",
+                        "tertiary": "#933c00",
+                        "primary-container": "#4361ee",
+                        "tertiary-fixed": "#ffdbcb",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#6561f0",
+                        "secondary-fixed-dim": "#c2c1ff",
+                        "on-surface": "#191c1e",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-fixed": "#341100",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#0031c4",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-bright": "#f7f9fb",
+                        "surface-tint": "#2e4edc",
+                        "outline-variant": "#c4c5d7",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#793000",
+                        "primary": "#2346d5",
+                        "on-secondary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#ffb692",
+                        "primary-fixed": "#dee1ff",
+                        "on-tertiary-container": "#fff1eb",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed": "#001159",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "1rem",
+                        "md": "1.5rem",
+                        "xl": "4rem",
+                        "lg": "2.5rem",
+                        "base": "8px",
+                        "xs": "0.5rem",
+                        "margin": "48px",
+                        "max-width": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "500"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .canvas-grid {
+            background-image: radial-gradient(circle, #c4c5d7 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .roadmap-line {
+            background: repeating-linear-gradient(to bottom, #747686 0, #747686 8px, transparent 8px, transparent 16px);
+        }
+        .node-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background overflow-hidden">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-dim flex flex-col h-full py-lg px-md z-30">
+<div class="mb-xl px-xs">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-inverse-primary">LearnMap</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">AI Learning Platform</p>
+</div>
+<nav class="flex-1 space-y-xs">
+<a class="flex items-center gap-sm px-sm py-xs rounded-xl transition-all duration-200 text-on-surface-variant hover:bg-surface-container-high active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-lg text-label-lg">Home</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-xl transition-all duration-200 text-primary font-bold bg-surface-container-high active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-label-lg text-label-lg">Roadmaps</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-xl transition-all duration-200 text-on-surface-variant hover:bg-surface-container-high active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-lg text-label-lg">Progress</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-xl transition-all duration-200 text-on-surface-variant hover:bg-surface-container-high active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-lg text-label-lg">Profile</span>
+</a>
+</nav>
+<button class="w-full py-sm px-md bg-primary text-on-primary font-label-lg text-label-lg rounded-full mb-lg transition-transform hover:shadow-lg active:scale-[0.98]">
+            New Roadmap
+        </button>
+<footer class="space-y-xs border-t border-outline-variant pt-md">
+<a class="flex items-center gap-sm px-sm py-xs rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-lg text-label-lg">Settings</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-lg text-label-lg">Help</span>
+</a>
+</footer>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-64 h-20 bg-surface dark:bg-surface-dim flex justify-between items-center px-xl w-auto z-20">
+<div class="flex items-center gap-md">
+<div class="relative">
+<span class="absolute inset-y-0 left-sm flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</span>
+<input class="pl-10 pr-md py-xs bg-surface-container-low border-none rounded-full w-64 font-body-md focus:ring-2 focus:ring-primary focus:bg-white transition-all" placeholder="Search roadmap nodes..." type="text"/>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface font-bold">Predictive Modeling &amp; Algorithms</h2>
+<div class="flex items-center gap-xs">
+<div class="w-32 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[45%] h-full bg-primary transition-all duration-500"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">45% Complete</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-sm">
+<button class="p-xs rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-xs rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-sm">
+<div class="text-right">
+<p class="font-label-lg text-label-lg text-on-surface">Alex Rivera</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Data Scientist</p>
+</div>
+<img alt="User avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="A professional headshot of a person with a friendly expression, set against a blurred modern office background. The lighting is bright and even, reinforcing a clean, corporate light-mode aesthetic. The individual has short dark hair and is wearing a minimalist dark shirt. The overall mood is approachable, professional, and tech-focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVDqF1J3XU8ogistykhln_vLDqLuBOsmXue8ttwgAjKFnar2OEs0Zkz7jm5zHY7xFmSClECTF29Gwnrzjnhmx-bW2JjDfG6hL5NrGrRVK-dGs-tK0JAQdXzl1Ux0_O8Qtw-SnlgvMwxRD4lNjWm6tlwft4bpGcg8IpkCjbvhkDsGPtDN0Wo0eVRbaZqmogx4r9SPLQ0_yjzt-AB1NY27hvtIVabewti6VUdIwevfKY7Yx6ot3Nc2Ly1fwXSGX8zHpxZIyLW8LWNesz"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 h-screen overflow-auto canvas-grid relative scroll-smooth">
+<div class="max-w-screen-max-width mx-auto min-h-full py-xl px-margin flex flex-col items-center">
+<!-- Roadmap Start -->
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-base shadow-lg z-10">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="flag">flag</span>
+</div>
+<div class="w-1 roadmap-line h-12 -mt-base mb-base"></div>
+<!-- Nodes Container -->
+<div class="flex flex-col items-center gap-0 w-full">
+<!-- Completed Section -->
+<div class="flex flex-col items-center group">
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-md border border-primary-container/20 w-80 mb-base transform hover:-translate-y-1 transition-all">
+<div class="flex justify-between items-start mb-xs">
+<span class="px-xs py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-wider">Completed</span>
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h4 class="font-title-lg text-title-lg mb-xs">Statistical Foundations</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Probability, distributions, and inferential statistics basics.</p>
+</div>
+<div class="w-1 roadmap-line h-16"></div>
+</div>
+<div class="flex flex-col items-center group">
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-md border border-primary-container/20 w-80 mb-base transform hover:-translate-y-1 transition-all">
+<div class="flex justify-between items-start mb-xs">
+<span class="px-xs py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-wider">Completed</span>
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h4 class="font-title-lg text-title-lg mb-xs">Linear Regression</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Simple and multiple linear models, OLS method.</p>
+</div>
+<div class="w-1 roadmap-line h-16"></div>
+</div>
+<!-- Current Focus (Large Node) -->
+<div class="flex flex-col items-center z-10 relative">
+<div class="node-pulse absolute inset-0 bg-primary/10 blur-xl rounded-full scale-150"></div>
+<div class="bg-surface-container-lowest p-lg rounded-xl shadow-2xl border-2 border-primary w-[440px] mb-base relative overflow-hidden">
+<!-- Progress Overlay Background -->
+<div class="absolute top-0 right-0 p-md opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div class="relative z-10">
+<div class="flex justify-between items-center mb-sm">
+<span class="px-sm py-1 bg-primary text-on-primary text-label-md font-bold rounded-full">CURRENT FOCUS</span>
+<span class="font-label-lg text-label-lg text-primary">Module 3 of 8</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-sm font-extrabold">Classification &amp; Logic</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Mastering Logistic Regression, Decision Trees, and evaluation metrics like Precision, Recall, and F1-score.</p>
+<div class="space-y-sm">
+<div class="flex justify-between text-label-md">
+<span class="text-on-surface">Sub-task: Confusion Matrix Analysis</span>
+<span class="text-primary font-bold">65%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="w-[65%] h-full bg-primary rounded-full"></div>
+</div>
+</div>
+<button class="mt-lg w-full py-sm bg-primary text-on-primary font-bold rounded-full hover:bg-secondary-container transition-colors">
+                                Resume Learning
+                            </button>
+</div>
+</div>
+<div class="w-1 bg-outline-variant h-16"></div>
+</div>
+<!-- Locked Sections -->
+<div class="flex flex-col items-center group opacity-60 grayscale-[0.5]">
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/30 w-80 mb-base">
+<div class="flex justify-between items-start mb-xs">
+<span class="px-xs py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-wider">Locked</span>
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="lock">lock</span>
+</div>
+<h4 class="font-title-lg text-title-lg mb-xs">Tree-Based Methods</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Random Forests, XGBoost, and Gradient Boosting machines.</p>
+</div>
+<div class="w-1 bg-outline-variant h-16 opacity-30"></div>
+</div>
+<div class="flex flex-col items-center group opacity-60 grayscale-[0.5]">
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/30 w-80 mb-base">
+<div class="flex justify-between items-start mb-xs">
+<span class="px-xs py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-wider">Locked</span>
+<span class="material-symbols-outlined text-outline text-[20px]" data-icon="lock">lock</span>
+</div>
+<h4 class="font-title-lg text-title-lg mb-xs">Neural Network Basics</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Architecture of perceptrons, activation functions, and backpropagation.</p>
+</div>
+<div class="w-1 bg-outline-variant h-16 opacity-30"></div>
+</div>
+<!-- Roadmap End -->
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center shadow-inner mt-base opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<p class="mt-sm font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest">Mastery Milestone</p>
+<div class="h-xl"></div>
+</div>
+</div>
+<!-- Floating Action Button (Internal Canvas Navigation) -->
+<div class="fixed bottom-lg right-lg flex flex-col gap-sm z-30">
+<button class="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-primary hover:bg-surface-container-high transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-primary hover:bg-surface-container-high transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="zoom_out">zoom_out</span>
+</button>
+<button class="w-14 h-14 rounded-full bg-primary text-on-primary shadow-xl flex items-center justify-center hover:bg-secondary-container transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="center_focus_strong">center_focus_strong</span>
+</button>
+</div>
+</main>
+<script>
+        // Simple micro-interaction for roadmap focus
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentFocus = document.querySelector('.bg-surface-container-lowest.border-2.border-primary');
+            if(currentFocus) {
+                // Scroll focus node into center on load
+                setTimeout(() => {
+                    currentFocus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 500);
+            }
+
+            // Hover effect for navigation links
+            const navLinks = document.querySelectorAll('aside nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    if(!link.classList.contains('text-primary')) {
+                        link.querySelector('.material-symbols-outlined').style.transform = 'translateX(4px)';
+                    }
+                });
+                link.addEventListener('mouseleave', () => {
+                    link.querySelector('.material-symbols-outlined').style.transform = 'translateX(0)';
+                });
+            });
+        });
+    </script>
+</body></html>

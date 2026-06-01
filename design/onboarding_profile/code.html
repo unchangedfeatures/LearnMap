@@ -1,0 +1,201 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>LearnMap - Onboarding Step 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Literata:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eef0f9",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary": "#006529",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f1f3fc",
+                        "surface-container-highest": "#e0e2eb",
+                        "surface-container": "#ebeef6",
+                        "on-primary-fixed-variant": "#0031c4",
+                        "secondary-fixed": "#e7deff",
+                        "secondary": "#6339db",
+                        "surface-variant": "#e0e2eb",
+                        "outline": "#747686",
+                        "tertiary-container": "#0d8038",
+                        "surface-container-high": "#e6e8f1",
+                        "secondary-container": "#7d56f5",
+                        "secondary-fixed-dim": "#ccbdff",
+                        "error-container": "#ffdad6",
+                        "surface": "#f9f9ff",
+                        "on-surface-variant": "#444655",
+                        "inverse-surface": "#2d3037",
+                        "on-primary-fixed": "#001159",
+                        "primary": "#2346d5",
+                        "surface-dim": "#d7dae2",
+                        "on-secondary-fixed": "#1f005f",
+                        "on-error-container": "#93000a",
+                        "background": "#f9f9ff",
+                        "on-primary-container": "#f4f2ff",
+                        "on-surface": "#181c22",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#4d17c5",
+                        "outline-variant": "#c4c5d7",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#bac3ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed": "#002109",
+                        "on-tertiary-fixed-variant": "#005320",
+                        "surface-tint": "#2e4edc",
+                        "on-tertiary-container": "#d1ffd1",
+                        "tertiary-fixed-dim": "#77dc87",
+                        "inverse-primary": "#bac3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#181c22",
+                        "tertiary-fixed": "#92f9a1",
+                        "primary-container": "#4361ee",
+                        "primary-fixed": "#dee1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "safe-area-bottom": "34px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "guide-text": ["Literata"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "guide-text": ["17px", { "lineHeight": "1.8", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col w-[390px] mx-auto relative overflow-x-hidden">
+<!-- TopAppBar (Transactional Override) -->
+<header class="fixed top-0 left-0 w-[390px] mx-auto right-0 z-50 flex justify-between items-center px-margin-mobile h-[52px] bg-surface/90 backdrop-blur-xl">
+<button aria-label="Go back" class="text-primary p-2 -ml-2">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-label-caps text-label-caps text-on-surface-variant">2 OF 4</div>
+<div class="w-[40px]"></div> <!-- Spacer to balance -->
+</header>
+<!-- Progress Bar -->
+<div class="fixed top-[52px] left-0 w-[390px] mx-auto right-0 z-50 px-margin-mobile">
+<div class="h-[8px] bg-primary/10 rounded-full w-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-2/4 transition-all duration-500"></div>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-mobile pt-[92px] pb-[100px] flex flex-col gap-stack-lg">
+<!-- Header -->
+<div class="flex flex-col gap-stack-sm">
+<h1 class="font-display-lg text-display-lg text-on-surface">Who are you learning as?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">This helps LearnMap personalize your curriculum and AI recommendations.</p>
+</div>
+<!-- Role Selection Grid -->
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Card 1: School Student -->
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="learner_type" type="radio" value="school">
+<div class="h-full flex flex-col items-center justify-center p-stack-md rounded-[16px] bg-surface-lowest border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/30 shadow-[0_4px_20px_0_rgba(0,0,0,0.1)] peer-checked:shadow-[0_4px_20px_0_rgba(35,70,213,0.15)] transition-all">
+<div class="text-[32px] mb-stack-sm group-hover:scale-110 transition-transform">🎒</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-center mb-1">School Student</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">UNDER 18</span>
+</div>
+<div class="absolute top-2 right-2 opacity-0 peer-checked:opacity-100 text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill">check_circle</span>
+</div>
+</label>
+<!-- Card 2: University Student -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="learner_type" type="radio" value="university">
+<div class="h-full flex flex-col items-center justify-center p-stack-md rounded-[16px] bg-surface-lowest border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/30 shadow-[0_4px_20px_0_rgba(0,0,0,0.1)] peer-checked:shadow-[0_4px_20px_0_rgba(35,70,213,0.15)] transition-all">
+<div class="text-[32px] mb-stack-sm group-hover:scale-110 transition-transform">🎓</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-center mb-1">University Student</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">18 - 25</span>
+</div>
+<div class="absolute top-2 right-2 opacity-0 peer-checked:opacity-100 text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill">check_circle</span>
+</div>
+</label>
+<!-- Card 3: Working Adult -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="learner_type" type="radio" value="working">
+<div class="h-full flex flex-col items-center justify-center p-stack-md rounded-[16px] bg-surface-lowest border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/30 shadow-[0_4px_20px_0_rgba(0,0,0,0.1)] peer-checked:shadow-[0_4px_20px_0_rgba(35,70,213,0.15)] transition-all">
+<div class="text-[32px] mb-stack-sm group-hover:scale-110 transition-transform">💼</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-center mb-1">Working Adult</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">25 - 60</span>
+</div>
+<div class="absolute top-2 right-2 opacity-0 peer-checked:opacity-100 text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill">check_circle</span>
+</div>
+</label>
+<!-- Card 4: Senior Learner -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="learner_type" type="radio" value="senior">
+<div class="h-full flex flex-col items-center justify-center p-stack-md rounded-[16px] bg-surface-lowest border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary-fixed/30 shadow-[0_4px_20px_0_rgba(0,0,0,0.1)] peer-checked:shadow-[0_4px_20px_0_rgba(35,70,213,0.15)] transition-all">
+<div class="text-[32px] mb-stack-sm group-hover:scale-110 transition-transform">👴</div>
+<span class="font-headline-sm text-headline-sm text-on-surface text-center mb-1">Senior Learner</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">60+</span>
+</div>
+<div class="absolute top-2 right-2 opacity-0 peer-checked:opacity-100 text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="check_circle" data-weight="fill">check_circle</span>
+</div>
+</label>
+</div>
+<!-- Context Input -->
+<div class="flex flex-col gap-stack-sm mt-stack-md">
+<label class="font-headline-sm text-headline-sm text-on-surface" for="extra_info">Any specific goals?</label>
+<textarea class="w-full rounded-[12px] border-[1.5px] border-surface-container-highest bg-surface-container-lowest p-stack-md font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none shadow-[0_4px_20px_0_rgba(0,0,0,0.05)]" id="extra_info" placeholder="e.g., I want to learn basic coding to build a simple website..." rows="3"></textarea>
+<p class="font-body-sm text-body-sm text-on-surface-variant/70 text-right">Optional</p>
+</div>
+</main>
+<!-- Sticky Bottom Actions (Transactional) -->
+<div class="fixed bottom-0 left-0 w-[390px] mx-auto right-0 p-margin-mobile pb-safe-area-bottom bg-gradient-to-t from-background via-background/90 to-transparent pt-stack-lg z-50">
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-stack-md rounded-[12px] shadow-[0_4px_20px_0_rgba(35,70,213,0.2)] active:scale-95 transition-transform flex items-center justify-center gap-2">
+            Continue
+            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</body></html>

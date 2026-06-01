@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Profile | LearnMap</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#93000a",
+            "tertiary-container": "#ba4e00",
+            "surface-variant": "#e0e3e5",
+            "surface-dim": "#d8dadc",
+            "surface-container": "#eceef0",
+            "on-surface-variant": "#444655",
+            "on-primary-container": "#f4f2ff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#352ac0",
+            "error-container": "#ffdad6",
+            "surface-container-highest": "#e0e3e5",
+            "secondary": "#4c45d5",
+            "inverse-primary": "#bac3ff",
+            "secondary-fixed": "#e2dfff",
+            "on-background": "#191c1e",
+            "background": "#f7f9fb",
+            "outline": "#747686",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed-dim": "#bac3ff",
+            "on-secondary-fixed": "#0e006a",
+            "inverse-on-surface": "#eff1f3",
+            "error": "#ba1a1a",
+            "tertiary": "#933c00",
+            "primary-container": "#4361ee",
+            "tertiary-fixed": "#ffdbcb",
+            "surface": "#f7f9fb",
+            "secondary-container": "#6561f0",
+            "secondary-fixed-dim": "#c2c1ff",
+            "on-surface": "#191c1e",
+            "inverse-surface": "#2d3133",
+            "on-tertiary-fixed": "#341100",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#0031c4",
+            "surface-container-high": "#e6e8ea",
+            "surface-bright": "#f7f9fb",
+            "surface-tint": "#2e4edc",
+            "outline-variant": "#c4c5d7",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#793000",
+            "primary": "#2346d5",
+            "on-secondary-container": "#fffbff",
+            "tertiary-fixed-dim": "#ffb692",
+            "primary-fixed": "#dee1ff",
+            "on-tertiary-container": "#fff1eb",
+            "surface-container-low": "#f2f4f6",
+            "on-primary-fixed": "#001159",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sm": "1rem",
+            "md": "1.5rem",
+            "xl": "4rem",
+            "lg": "2.5rem",
+            "base": "8px",
+            "xs": "0.5rem",
+            "margin": "48px",
+            "max-width": "1440px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "display-xl": ["Inter"],
+            "title-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "display-lg": ["Inter"],
+            "label-lg": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "title-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "500"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+            "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "600"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #f7f9fb;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .ambient-card {
+      box-shadow: 0 4px 20px -2px rgba(35, 70, 213, 0.04), 0 2px 8px -2px rgba(35, 70, 213, 0.02);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .ambient-card:hover {
+      box-shadow: 0 12px 24px -4px rgba(35, 70, 213, 0.08), 0 4px 12px -2px rgba(35, 70, 213, 0.04);
+      transform: translateY(-4px);
+    }
+    .glass-input {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+    }
+    .progress-track {
+      background-color: #e0e3e5;
+      height: 4px;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      background-color: #2346d5;
+      height: 100%;
+      transition: width 0.6s ease;
+    }
+    .selection-active {
+      border: 2px solid #2346d5;
+      background-color: #f4f2ff;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-on-background">
+<!-- Header / Navigation Shell Suppression (Transactional Mode) -->
+<header class="fixed top-0 left-0 right-0 h-20 flex items-center px-margin bg-transparent z-50">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary font-bold text-headline-sm">architecture</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">LearnMap</span>
+</div>
+<div class="ml-auto">
+<button class="text-on-surface-variant font-label-lg text-label-lg hover:text-primary transition-colors">Save &amp; Exit</button>
+</div>
+</header>
+<main class="max-w-max-width mx-auto pt-32 px-margin pb-xl">
+<!-- Progress Indicator Container -->
+<div class="max-w-4xl mx-auto mb-xl">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-label-lg text-label-lg text-primary uppercase tracking-widest">Step 2 of 4</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">Profile Setup</span>
+</div>
+<div class="progress-track">
+<div class="progress-fill" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Main Content Layout: Bento-inspired two-part split -->
+<div class="grid grid-cols-12 gap-gutter items-start">
+<!-- Left Section: Identity Selection -->
+<section class="col-span-7">
+<header class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Who are you learning as?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Tailoring your experience based on your current life stage.</p>
+</header>
+<div class="grid grid-cols-2 gap-md" id="role-selection">
+<!-- Card 1: School Student -->
+<div class="ambient-card bg-surface-container-lowest rounded-xl p-lg cursor-pointer border-2 border-transparent group relative overflow-hidden" onclick="selectRole(this)">
+<div class="mb-md p-sm bg-primary-fixed w-fit rounded-lg text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-headline-sm">school</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">School Student</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Focusing on K-12 subjects, exam prep, and foundational skills.</p>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+</div>
+<!-- Card 2: University Student -->
+<div class="ambient-card bg-surface-container-lowest rounded-xl p-lg cursor-pointer border-2 border-transparent group relative overflow-hidden" onclick="selectRole(this)">
+<div class="mb-md p-sm bg-primary-fixed w-fit rounded-lg text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-headline-sm">history_edu</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">University Student</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Higher education, specialized research, and academic mastery.</p>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+</div>
+<!-- Card 3: Working Adult -->
+<div class="ambient-card bg-surface-container-lowest rounded-xl p-lg cursor-pointer border-2 border-transparent group relative overflow-hidden selection-active" onclick="selectRole(this)">
+<div class="mb-md p-sm bg-primary-fixed w-fit rounded-lg text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-headline-sm">work</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Working Adult</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Professional upskilling, career shifts, and efficiency hacks.</p>
+<div class="absolute top-4 right-4 opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Card 4: Senior Learner -->
+<div class="ambient-card bg-surface-container-lowest rounded-xl p-lg cursor-pointer border-2 border-transparent group relative overflow-hidden" onclick="selectRole(this)">
+<div class="mb-md p-sm bg-primary-fixed w-fit rounded-lg text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-headline-sm">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Senior Learner</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Lifelong learning, personal interests, and cognitive health.</p>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Section: Specific Goals -->
+<section class="col-span-5 flex flex-col h-full">
+<div class="ambient-card bg-surface-container-lowest rounded-xl p-lg h-full flex flex-col border border-outline-variant/30">
+<header class="mb-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Any specific goals?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Tell our AI exactly what you want to achieve. The more detail, the better the roadmap.</p>
+</header>
+<div class="flex-grow relative">
+<textarea class="w-full h-full min-h-[400px] p-md bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-primary transition-all resize-none" placeholder="Example: I want to transition from a Graphic Designer to a UX Designer in 6 months. I need to learn Figma, accessibility standards, and how to conduct user interviews..."></textarea>
+<div class="absolute bottom-4 right-4 flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-label-md">auto_awesome</span>
+<span class="font-label-md text-label-md">AI Assistant is listening</span>
+</div>
+</div>
+<div class="mt-lg">
+<div class="flex items-center gap-sm mb-md p-sm bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Your responses help us generate 24 personalized learning modules.</p>
+</div>
+<button class="w-full bg-primary text-on-primary py-md px-lg rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-sm hover:bg-primary-container transition-colors shadow-lg shadow-primary/20">
+              Continue to Roadmap Style
+              <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Decorative Image Context -->
+<div class="mt-gutter rounded-xl overflow-hidden h-40 relative group">
+<img class="w-full h-full object-cover grayscale opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700" data-alt="A clean, minimalist workspace with a laptop, a notebook, and a single green plant. The lighting is soft and airy, typical of a bright morning in a modern office. The color palette is dominated by neutral whites and soft blues, reflecting a sense of mental clarity and productivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTY0iFAhmCCFVzUURKpgRu7kEkndQEBAErYma0x-1Awsgr_5AA4uksD9sx1vU99yGmyssBx77Npdy59rMX4zVZ3opugBpwgOp3JxzQSGjkAXK8b3rRzHqD4HnHv00-MQynlTQWNiXFGKTYD68qrllfnjA6o8-5LeTSobqbmLf3yxeeTuqvwh3M7VEzP_dyUmP9RGjy7vcxOz3gOQry2mLq_Evsq99ybACsvt1ueszL18qd6zfLpjP5nrO2MuwNZTAmnUIcU2ACzzCe"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<p class="font-label-md text-label-md text-primary bg-surface-container-lowest/80 backdrop-blur px-xs py-1 rounded">Focus Mode Active</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 px-margin py-md flex justify-between items-center bg-transparent">
+<button class="flex items-center gap-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+      Back
+    </button>
+<div class="flex gap-md">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+</footer>
+<script>
+    function selectRole(element) {
+      // Remove active class from all
+      const cards = document.querySelectorAll('#role-selection > div');
+      cards.forEach(card => {
+        card.classList.remove('selection-active');
+        const icon = card.querySelector('.absolute .material-symbols-outlined');
+        if (icon) {
+          icon.parentElement.classList.add('opacity-0');
+          icon.parentElement.classList.remove('opacity-100');
+          icon.style.fontVariationSettings = "'FILL' 0";
+        }
+      });
+      
+      // Add to selected
+      element.classList.add('selection-active');
+      const activeIcon = element.querySelector('.absolute .material-symbols-outlined');
+      if (activeIcon) {
+        activeIcon.parentElement.classList.remove('opacity-0');
+        activeIcon.parentElement.classList.add('opacity-100');
+        activeIcon.style.fontVariationSettings = "'FILL' 1";
+      }
+
+      // Micro-interaction: quick pop effect
+      element.style.transform = 'scale(0.98)';
+      setTimeout(() => {
+        element.style.transform = 'translateY(-4px)';
+      }, 100);
+    }
+  </script>
+</body></html>

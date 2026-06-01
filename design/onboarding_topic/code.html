@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Onboarding Step 1 - Topic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Literata:wght@400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#eef0f9",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary": "#006529",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f1f3fc",
+                    "surface-container-highest": "#e0e2eb",
+                    "surface-container": "#ebeef6",
+                    "on-primary-fixed-variant": "#0031c4",
+                    "secondary-fixed": "#e7deff",
+                    "secondary": "#6339db",
+                    "surface-variant": "#e0e2eb",
+                    "outline": "#747686",
+                    "tertiary-container": "#0d8038",
+                    "surface-container-high": "#e6e8f1",
+                    "secondary-container": "#7d56f5",
+                    "secondary-fixed-dim": "#ccbdff",
+                    "error-container": "#ffdad6",
+                    "surface": "#f9f9ff",
+                    "on-surface-variant": "#444655",
+                    "inverse-surface": "#2d3037",
+                    "on-primary-fixed": "#001159",
+                    "primary": "#2346d5",
+                    "surface-dim": "#d7dae2",
+                    "on-secondary-fixed": "#1f005f",
+                    "on-error-container": "#93000a",
+                    "background": "#f9f9ff",
+                    "on-primary-container": "#f4f2ff",
+                    "on-surface": "#181c22",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#4d17c5",
+                    "outline-variant": "#c4c5d7",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#bac3ff",
+                    "on-secondary-container": "#fffbff",
+                    "on-tertiary-fixed": "#002109",
+                    "on-tertiary-fixed-variant": "#005320",
+                    "surface-tint": "#2e4edc",
+                    "on-tertiary-container": "#d1ffd1",
+                    "tertiary-fixed-dim": "#77dc87",
+                    "inverse-primary": "#bac3ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-background": "#181c22",
+                    "tertiary-fixed": "#92f9a1",
+                    "primary-container": "#4361ee",
+                    "primary-fixed": "#dee1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "safe-area-bottom": "34px",
+                    "base": "4px",
+                    "gutter": "16px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "20px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "guide-text": [
+                            "Literata"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "headline-sm": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "guide-text": [
+                            "17px",
+                            {
+                                    "lineHeight": "1.8",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F4F6FF;
+            max-width: 390px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .progress-bar-container {
+            display: flex;
+            gap: 4px;
+            padding: 8px 20px;
+            background-color: transparent;
+        }
+        
+        .progress-segment {
+            height: 8px;
+            flex: 1;
+            border-radius: 9999px;
+            background-color: rgba(67, 97, 238, 0.1);
+        }
+        
+        .progress-segment.active {
+            background-color: #4361EE;
+        }
+        
+        .chip {
+            padding: 12px 16px;
+            border-radius: 12px;
+            background-color: white;
+            border: 1.5px solid transparent;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .chip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+        }
+        
+        .chip.selected {
+            border-color: #4361EE;
+            background-color: rgba(67, 97, 238, 0.05);
+            box-shadow: 0 4px 20px rgba(67, 97, 238, 0.15);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #4361EE;
+            box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top AppBar (Onboarding variant, suppressed standard nav) -->
+<header class="w-full flex justify-between items-center px-margin-mobile h-[52px] bg-background">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary">LearnMap</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">1 of 4</div>
+</header>
+<!-- Progress Bars -->
+<div class="progress-bar-container">
+<div class="progress-segment active"></div>
+<div class="progress-segment"></div>
+<div class="progress-segment"></div>
+<div class="progress-segment"></div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 px-margin-mobile pt-stack-lg pb-[100px] flex flex-col gap-stack-lg">
+<!-- Header -->
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-sm">What do you want to learn?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Select a topic to generate your personalized learning roadmap.</p>
+</div>
+<!-- Search -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="search-input w-full bg-white border-[1.5px] border-surface-variant rounded-xl py-3 pl-12 pr-4 font-body-lg text-body-lg text-on-surface placeholder:text-outline transition-all duration-200" placeholder="Search topics..." type="text">
+</div>
+<!-- Topic Grid -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="chip selected" onclick="toggleChip(this)">
+<span class="text-[20px]">🧮</span>
+<span class="font-body-sm text-body-sm font-semibold">Mathematics</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">💻</span>
+<span class="font-body-sm text-body-sm font-semibold">Computer Sci</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">🎨</span>
+<span class="font-body-sm text-body-sm font-semibold">Design</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">🌍</span>
+<span class="font-body-sm text-body-sm font-semibold">History</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">🔬</span>
+<span class="font-body-sm text-body-sm font-semibold">Biology</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">📈</span>
+<span class="font-body-sm text-body-sm font-semibold">Economics</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">🧠</span>
+<span class="font-body-sm text-body-sm font-semibold">Psychology</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">🗣️</span>
+<span class="font-body-sm text-body-sm font-semibold">Languages</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">🎵</span>
+<span class="font-body-sm text-body-sm font-semibold">Music Theory</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">📸</span>
+<span class="font-body-sm text-body-sm font-semibold">Photography</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">🍳</span>
+<span class="font-body-sm text-body-sm font-semibold">Culinary Arts</span>
+</div>
+<div class="chip" onclick="toggleChip(this)">
+<span class="text-[20px]">🚀</span>
+<span class="font-body-sm text-body-sm font-semibold">Physics</span>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Button -->
+<div class="fixed bottom-0 left-0 w-full px-margin-mobile pb-safe-area-bottom pt-4 bg-gradient-to-t from-background via-background to-transparent z-50 flex justify-center pointer-events-none">
+<div class="w-full max-w-[350px] pointer-events-auto">
+<button class="w-full bg-primary text-on-primary font-headline-sm text-headline-sm py-4 rounded-xl shadow-[0_4px_20px_rgba(35,70,213,0.15)] hover:opacity-90 active:scale-95 transition-all duration-200">
+                Continue
+            </button>
+</div>
+</div>
+<script>
+        function toggleChip(element) {
+            // Remove selected class from all chips
+            document.querySelectorAll('.chip').forEach(chip => {
+                chip.classList.remove('selected');
+            });
+            // Add selected class to clicked chip
+            element.classList.add('selected');
+        }
+    </script>
+</body></html>

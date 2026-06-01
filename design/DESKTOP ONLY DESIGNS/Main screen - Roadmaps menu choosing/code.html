@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Roadmaps - LearnMap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#001159",
+                      "primary": "#2346d5",
+                      "primary-fixed-dim": "#bac3ff",
+                      "error": "#ba1a1a",
+                      "secondary": "#4c45d5",
+                      "primary-container": "#4361ee",
+                      "surface-container": "#eceef0",
+                      "on-background": "#191c1e",
+                      "tertiary-container": "#ba4e00",
+                      "surface-bright": "#f7f9fb",
+                      "on-secondary-fixed": "#0e006a",
+                      "secondary-fixed": "#e2dfff",
+                      "on-surface": "#191c1e",
+                      "outline-variant": "#c4c5d7",
+                      "on-primary-container": "#f4f2ff",
+                      "surface-container-high": "#e6e8ea",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#793000",
+                      "on-tertiary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "outline": "#747686",
+                      "background": "#f7f9fb",
+                      "tertiary": "#933c00",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffdbcb",
+                      "surface-dim": "#d8dadc",
+                      "on-secondary-container": "#fffbff",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-tertiary-fixed": "#341100",
+                      "surface": "#f7f9fb",
+                      "inverse-surface": "#2d3133",
+                      "surface-variant": "#e0e3e5",
+                      "on-primary-fixed-variant": "#0031c4",
+                      "surface-container-low": "#f2f4f6",
+                      "on-secondary-fixed-variant": "#352ac0",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#6561f0",
+                      "surface-tint": "#2e4edc",
+                      "inverse-primary": "#bac3ff",
+                      "inverse-on-surface": "#eff1f3",
+                      "primary-fixed": "#dee1ff",
+                      "tertiary-fixed-dim": "#ffb692",
+                      "secondary-fixed-dim": "#c2c1ff",
+                      "on-surface-variant": "#444655",
+                      "on-tertiary-container": "#fff1eb",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "1rem",
+                      "xs": "0.5rem",
+                      "xl": "4rem",
+                      "lg": "2.5rem",
+                      "gutter": "24px",
+                      "md": "1.5rem",
+                      "margin": "48px",
+                      "max-width": "1440px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "title-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "display-xl": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "500"}],
+                      "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background h-full flex antialiased">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-surface-dim shadow-sm flex flex-col py-lg px-md z-50">
+<div class="flex items-center gap-3 mb-xl px-2">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary font-display-lg text-title-lg font-bold">
+                L
+            </div>
+<div>
+<h1 class="font-display-lg text-title-lg font-bold text-primary dark:text-primary-fixed-dim">LearnMap</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">AI Learning Platform</p>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg h-12 px-gutter rounded-full mb-8 flex items-center justify-center gap-2 hover:bg-primary-container transition-colors shadow-[0_4px_12px_rgba(35,70,213,0.2)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+            New Roadmap
+        </button>
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-bold border-r-4 border-primary bg-primary/5 cursor-pointer active:scale-95 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<span>Roadmaps</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span>Progress</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="mt-auto space-y-2 pt-8 border-t border-surface-container-high">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200 cursor-pointer font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 h-20 bg-surface-bright dark:bg-surface-dim flex items-center justify-between px-lg z-40">
+<div class="flex-1 flex items-center">
+<!-- Search Bar -->
+<div class="relative w-96 hidden lg:block">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-12 bg-surface-container-low border border-surface-container-highest rounded-full pl-12 pr-4 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search roadmaps, topics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-high transition-all duration-200 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full hover:bg-surface-container-high transition-all duration-200 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden cursor-pointer border border-surface-container-highest">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A close-up headshot of a professional individual looking slightly off-camera, representing a user profile avatar. The background is a soft, out-of-focus natural setting. The lighting is natural and flattering, emphasizing a clean, corporate aesthetic suitable for an enterprise learning platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgFFWzCkVCqvfH2H6rTXzK-dYLnflPWLBZJrxFz2GIeyaAy20sAEbK3XDwI5UkNaNJqOLch3CmGukIwddGbbxQnNdplHcxw-Rxq_yM3Foxsz7fFCiBSIKCNTAByLPfsWv0LC96oN_XJfYBhEyN4p_-fi93-xi-T96PVAD12HYQaEpBQ5Thzfmk60qxVPziK4WEzcwdMNXBDlJDBMDw1xh8vdq0ztAo0vFJEfVeVWa1JLXnHAapTKt2YRPqFsoZpYuoAHDYcjKeO-RD"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-20 w-full min-h-screen p-margin flex justify-center">
+<div class="w-full max-w-[1440px]">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-lg gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">My Roadmaps</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Track your progress and continue learning.</p>
+</div>
+<!-- Filters -->
+<div class="flex bg-surface-container-low rounded-lg p-1">
+<button class="px-6 py-2 rounded-md bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm">All</button>
+<button class="px-6 py-2 rounded-md text-on-surface-variant hover:text-primary font-label-lg text-label-lg transition-colors">In Progress</button>
+<button class="px-6 py-2 rounded-md text-on-surface-variant hover:text-primary font-label-lg text-label-lg transition-colors">Completed</button>
+</div>
+</div>
+<!-- Bento Grid Canvas for Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Card 1: In Progress (High Density) -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_2px_8px_rgba(35,70,213,0.04)] border border-surface-container hover:shadow-[0_8px_24px_rgba(35,70,213,0.08)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="terminal" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-label-md">In Progress</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Advanced Systems Programming</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-1">Deep dive into Rust memory management, concurrency models, and network programming.</p>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-lg text-label-lg text-on-surface">64% Completed</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Last active: 2h ago</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 64%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 2: New/Barely Started -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_2px_8px_rgba(35,70,213,0.04)] border border-surface-container hover:shadow-[0_8px_24px_rgba(35,70,213,0.08)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer flex flex-col h-full">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="architecture" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md">Just Started</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Cloud Native Architecture</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-1">Microservices design patterns, Kubernetes orchestration, and distributed system tracing.</p>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-lg text-label-lg text-on-surface">12% Completed</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Last active: 1d ago</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 12%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 3: Completed -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_2px_8px_rgba(35,70,213,0.04)] border border-surface-container hover:shadow-[0_8px_24px_rgba(35,70,213,0.08)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer flex flex-col h-full opacity-80 hover:opacity-100">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="data_object" style="font-variation-settings: 'FILL' 1;">data_object</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                            Completed
+                        </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Data Structures &amp; Algorithms</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-1">Comprehensive review of fundamental computer science concepts for technical interviews.</p>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-lg text-label-lg text-on-surface">100% Completed</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Finished: Oct 12</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 4: Action/Empty State hybrid -->
+<div class="bg-surface-container-low rounded-xl p-lg border-2 border-dashed border-outline-variant hover:border-primary hover:bg-primary/5 transition-all duration-300 cursor-pointer flex flex-col items-center justify-center text-center h-full min-h-[300px]">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant mb-4 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-4xl" data-icon="add">add</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-background mb-2">Start a New Journey</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Generate a new AI-powered learning roadmap based on your career goals.</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

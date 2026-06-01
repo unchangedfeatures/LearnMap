@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Onboarding Step 3 - LearnMap</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#eef0f9",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f9f9ff",
+              "tertiary": "#006529",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f1f3fc",
+              "surface-container-highest": "#e0e2eb",
+              "surface-container": "#ebeef6",
+              "on-primary-fixed-variant": "#0031c4",
+              "secondary-fixed": "#e7deff",
+              "secondary": "#6339db",
+              "surface-variant": "#e0e2eb",
+              "outline": "#747686",
+              "tertiary-container": "#0d8038",
+              "surface-container-high": "#e6e8f1",
+              "secondary-container": "#7d56f5",
+              "secondary-fixed-dim": "#ccbdff",
+              "error-container": "#ffdad6",
+              "surface": "#f9f9ff",
+              "on-surface-variant": "#444655",
+              "inverse-surface": "#2d3037",
+              "on-primary-fixed": "#001159",
+              "primary": "#2346d5",
+              "surface-dim": "#d7dae2",
+              "on-secondary-fixed": "#1f005f",
+              "on-error-container": "#93000a",
+              "background": "#f9f9ff",
+              "on-primary-container": "#f4f2ff",
+              "on-surface": "#181c22",
+              "error": "#ba1a1a",
+              "on-secondary-fixed-variant": "#4d17c5",
+              "outline-variant": "#c4c5d7",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#bac3ff",
+              "on-secondary-container": "#fffbff",
+              "on-tertiary-fixed": "#002109",
+              "on-tertiary-fixed-variant": "#005320",
+              "surface-tint": "#2e4edc",
+              "on-tertiary-container": "#d1ffd1",
+              "tertiary-fixed-dim": "#77dc87",
+              "inverse-primary": "#bac3ff",
+              "surface-container-lowest": "#ffffff",
+              "on-error": "#ffffff",
+              "on-background": "#181c22",
+              "tertiary-fixed": "#92f9a1",
+              "primary-container": "#4361ee",
+              "primary-fixed": "#dee1ff"
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            spacing: {
+              "stack-md": "16px",
+              "safe-area-bottom": "34px",
+              "base": "4px",
+              "gutter": "16px",
+              "stack-sm": "8px",
+              "margin-mobile": "20px",
+              "stack-lg": "24px"
+            },
+            fontFamily: {
+              "headline-md": ["Inter"],
+              "guide-text": ["Literata"],
+              "display-lg": ["Inter"],
+              "headline-sm": ["Inter"],
+              "body-lg": ["Inter"],
+              "body-sm": ["Inter"],
+              "label-caps": ["Inter"]
+            },
+            fontSize: {
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "700" }],
+              "guide-text": ["17px", { lineHeight: "1.8", fontWeight: "400" }],
+              "display-lg": ["32px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "800" }],
+              "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+              "body-lg": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+              "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Hide scrollbar for clean mobile preview */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .card-shadow-1 {
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-shadow-selected {
+            box-shadow: 0 8px 24px 0 rgba(67, 97, 238, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased flex justify-center">
+<!-- Mobile Container (390px fluid grid simulation) -->
+<div class="w-full max-w-[390px] min-h-[844px] relative flex flex-col bg-background overflow-hidden border-x border-surface-container-highest/30 sm:shadow-2xl">
+<!-- Onboarding Header (Navigation Shell suppressed for transactional flow) -->
+<header class="w-full pt-[44px] pb-stack-sm px-margin-mobile flex items-center justify-between z-10 bg-background">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-start text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="flex-1 flex justify-center">
+<span class="font-label-caps text-label-caps text-outline tracking-widest">3 OF 4</span>
+</div>
+<div class="w-10"></div> <!-- Spacer to center the step text -->
+</header>
+<!-- Progress Bar -->
+<div class="px-margin-mobile pb-stack-lg w-full">
+<div class="w-full h-[8px] bg-primary-container/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[75%] rounded-full transition-all duration-500 ease-out"></div>
+</div>
+</div>
+<!-- Main Canvas -->
+<main class="flex-1 px-margin-mobile flex flex-col pb-[120px]">
+<!-- Headline -->
+<div class="mt-stack-sm mb-stack-lg text-center">
+<h1 class="font-display-lg text-display-lg text-on-surface">Why are you learning this?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3 px-4">
+                    We'll use this to set the right pace and recommend the best path.
+                </p>
+</div>
+<!-- Goal Cards Container (Bento/List hybrid) -->
+<div class="flex flex-col gap-stack-md">
+<!-- Card 1: Just Curious -->
+<button class="w-full text-left bg-surface-container-lowest rounded-[16px] card-shadow-1 p-4 flex items-center gap-4 border-[1.5px] border-transparent hover:border-surface-variant transition-all duration-200 group relative overflow-hidden">
+<div class="w-[48px] h-[48px] rounded-full bg-surface-container-low flex items-center justify-center text-[24px] shrink-0">
+                        🧠
+                    </div>
+<div class="flex-1 min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Just Curious</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">Explore basics at a relaxed pace</p>
+</div>
+<div class="shrink-0 self-start">
+<span class="inline-flex items-center px-3 py-1.5 rounded-full bg-outline-variant/20 text-on-surface-variant font-label-caps text-label-caps whitespace-nowrap">
+                            5-10 MIN / DAY
+                        </span>
+</div>
+</button>
+<!-- Card 2: Serious Learning (Selected State) -->
+<button class="w-full text-left bg-surface-container-lowest rounded-[16px] card-shadow-selected p-4 flex items-center gap-4 border-[1.5px] border-primary-container ring-[3px] ring-primary-container/10 transition-all duration-200 relative overflow-hidden">
+<!-- Subtle gradient background for selected state -->
+<div class="absolute inset-0 bg-primary-container/5 pointer-events-none"></div>
+<div class="w-[48px] h-[48px] rounded-full bg-primary-container/10 flex items-center justify-center text-[24px] shrink-0 relative z-10">
+                        📚
+                    </div>
+<div class="flex-1 min-w-0 relative z-10">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Serious Learning</h2>
+<p class="font-body-sm text-body-sm text-primary-container mt-1 truncate font-medium">Consistent daily progress</p>
+</div>
+<div class="shrink-0 self-start relative z-10">
+<span class="inline-flex items-center px-3 py-1.5 rounded-full bg-primary-container/12 text-primary-container font-label-caps text-label-caps whitespace-nowrap">
+                            15-20 MIN / DAY
+                        </span>
+</div>
+</button>
+<!-- Card 3: Exam Preparation -->
+<button class="w-full text-left bg-surface-container-lowest rounded-[16px] card-shadow-1 p-4 flex items-center gap-4 border-[1.5px] border-transparent hover:border-surface-variant transition-all duration-200 group relative overflow-hidden">
+<div class="w-[48px] h-[48px] rounded-full bg-surface-container-low flex items-center justify-center text-[24px] shrink-0">
+                        🎯
+                    </div>
+<div class="flex-1 min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Exam Preparation</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 truncate">Intensive targeted study</p>
+</div>
+<div class="shrink-0 self-start">
+<span class="inline-flex items-center px-3 py-1.5 rounded-full bg-error-container/40 text-on-error-container font-label-caps text-label-caps whitespace-nowrap">
+                            30+ MIN / DAY
+                        </span>
+</div>
+</button>
+</div>
+</main>
+<!-- Sticky Footer Action -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] p-margin-mobile pb-safe-area-bottom bg-background/80 backdrop-blur-xl border-t border-surface-variant/30 z-50">
+<button class="w-full bg-primary-container text-on-primary-container h-[56px] rounded-[12px] font-headline-sm text-[16px] font-bold shadow-[0_4px_12px_rgba(67,97,238,0.3)] hover:opacity-90 hover:scale-[0.98] transition-all active:scale-95 flex items-center justify-center gap-2">
+                Continue
+            </button>
+</div>
+</div>
+</body></html>

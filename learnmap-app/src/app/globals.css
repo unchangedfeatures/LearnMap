@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  /* LearnMap “Cognitive Flow” palette (light mode MVP) */
+  --background: #f9f9ff; /* surface / background */
+  --foreground: #181c22; /* on-surface */
+
+  --primary: #4361ee;
+  --primary-foreground: #ffffff;
+
+  --card: #ffffff;
+  --card-foreground: #181c22;
+
+  --muted: #ebeef6;
+  --muted-foreground: #444655;
+
+  --border: #c4c5d7;
+  --ring: #2346d5;
+
+  /* Desktop-only design comps (Cognitive Flow Desktop) */
+  --surface: #f7f9fb;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f2f4f6;
+  --surface-container: #eceef0;
+  --surface-container-high: #e6e8ea;
+  --surface-container-highest: #e0e3e5;
+
+  --on-surface: #191c1e;
+  --on-surface-variant: #444655;
+
+  --outline: #747686;
+  --outline-variant: #c4c5d7;
+
+  --lm-max-width: 1440px;
+  --lm-margin: 48px;
+  --lm-gutter: 24px;
+
+  --radius: 0.75rem; /* 12px */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-literata);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Simple utility for LearnMap cards (until shadcn is added) */
+.lm-card {
+  background: var(--card);
+  color: var(--card-foreground);
+
+  /* Let Tailwind border utilities (border-2, border-*) override cleanly. */
+  border-style: solid;
+  border-color: color-mix(in oklab, var(--border), transparent 20%);
+
+  border-radius: 1rem; /* 16px cards */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.lm-btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius);
+}
+
+.lm-input {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #ffffff;
+}
+
+.lm-input:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--ring), transparent 50%);
+  outline-offset: 2px;
+}
