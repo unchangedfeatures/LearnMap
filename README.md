@@ -4,7 +4,7 @@ Mobile-first, AI-powered learning roadmap app for university students (and lifel
 
 > The production Next.js app lives in **`learnmap-app/`**.
 
-**Live demo:** _add your Vercel URL here_ (e.g. `https://learnmap-yourname.vercel.app`)
+**Live demo:** *working on it*
 
 ---
 
