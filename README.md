@@ -3,6 +3,7 @@
 Mobile-first, AI-powered learning roadmap app for university students (and lifelong learners).
 
 > The production Next.js app lives in **`learnmap-app/`**.
+<img width="1920" height="913" alt="image" src="https://github.com/user-attachments/assets/478c9e5e-e85b-4812-b4f8-162b150b2ee5" />
 
 **Live demo:** *working on it*
 
